@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design AI Systems"
+  short_description: "Architect reliable, scalable AI systems"
+  default_prompt: "Use $design-ai-systems to turn this AI use case into an architecture with explicit tradeoffs and an evolution plan."

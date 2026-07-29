@@ -1,0 +1,4 @@
+interface:
+  display_name: "Select CUDA Parallel Patterns"
+  short_description: "Choose and compose CUDA execution patterns"
+  default_prompt: "Use $select-cuda-parallel-patterns to map this GPU workload to CUDA patterns and explain the tradeoffs."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Modernize C++ Boundaries"
+  short_description: "Isolate SDKs and migrate legacy C++ safely"
+  default_prompt: "Use $modernize-cpp-boundaries to contain this external API and plan an incremental migration to a clean C++ domain model."

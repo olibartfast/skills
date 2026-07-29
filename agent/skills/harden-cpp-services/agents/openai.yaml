@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harden C++ Services"
+  short_description: "Add failure isolation to distributed C++ systems"
+  default_prompt: "Use $harden-cpp-services to add timeouts, backoff, circuit breaking, and resource isolation to this C++ service."

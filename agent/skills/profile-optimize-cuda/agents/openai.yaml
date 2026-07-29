@@ -1,0 +1,4 @@
+interface:
+  display_name: "Profile and Optimize CUDA"
+  short_description: "Diagnose CUDA bottlenecks with NVIDIA profilers"
+  default_prompt: "Use $profile-optimize-cuda to establish a baseline, identify this CUDA bottleneck, and propose evidence-backed optimizations."

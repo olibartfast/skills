@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pipeline CUDA Streams"
+  short_description: "Overlap CUDA transfers and computation safely"
+  default_prompt: "Use $pipeline-cuda-streams to turn this CUDA workload into a correct, measurable asynchronous pipeline."

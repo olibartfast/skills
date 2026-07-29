@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model C++ Domain Services"
+  short_description: "Separate domain, persistence, commands, and reads"
+  default_prompt: "Use $model-cpp-domain-services to structure this C++ backend around explicit domain boundaries, repositories, transactions, and read models."

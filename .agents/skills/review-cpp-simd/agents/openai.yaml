@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review C++ SIMD"
+  short_description: "Review C++ loops for portable SIMD readiness"
+  default_prompt: "Use $review-cpp-simd to identify vectorization blockers in this C++ hot loop."

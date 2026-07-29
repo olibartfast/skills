@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement CUDA Data Primitives"
+  short_description: "Build reductions, scans, maps, and indexed ops"
+  default_prompt: "Use $implement-cuda-data-primitives to implement or review this CUDA reduction, scan, map, gather, scatter, or histogram."
