@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compose C++ Components"
+  short_description: "Design explicit dependencies and runtime extension"
+  default_prompt: "Use $compose-cpp-components to design the dependency graph, composition root, and runtime extension points for this C++ system."
