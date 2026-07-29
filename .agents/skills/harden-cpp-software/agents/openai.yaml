@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harden C++ Software"
+  short_description: "Apply proportional C++ quality gates"
+  default_prompt: "Use $harden-cpp-software to build a proportional verification matrix for this C++ project."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineer Modern CMake"
+  short_description: "Design maintainable target-based CMake builds"
+  default_prompt: "Use $engineer-modern-cmake to design or review this CMake build."

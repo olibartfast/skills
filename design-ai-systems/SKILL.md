@@ -1,6 +1,6 @@
 ---
 name: design-ai-systems
-description: Design, review, or evolve production AI and machine-learning systems around measurable business outcomes. Use when Codex must turn an AI use case into an end-to-end architecture; compare model, compute, deployment, or platform options; assess an existing AI architecture; define data, inference, evaluation, observability, resilience, security, governance, cost, or scaling plans; or create a phased roadmap that keeps models replaceable.
+description: Design, review, or evolve production AI and machine-learning systems around measurable business outcomes. Use when turning an AI use case into an end-to-end architecture; comparing model, compute, deployment, or platform options; assessing an existing AI architecture; defining data, inference, evaluation, observability, resilience, security, governance, cost, or scaling plans; or creating a phased roadmap that keeps models replaceable.
 ---
 
 # Design AI Systems

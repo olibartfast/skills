@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test C++ Software"
+  short_description: "Design risk-based C++ test strategies"
+  default_prompt: "Use $test-cpp-software to design or review the test strategy for this C++ change."

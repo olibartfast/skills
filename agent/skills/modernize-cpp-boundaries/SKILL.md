@@ -1,6 +1,8 @@
 ---
-description: "Isolate legacy code, C APIs, vendor SDKs, drivers, protocols, and unstable third-party libraries behind modern C++ boundary adapters and anti-corruption layers, then migrate incrementally with a Strangler Fig approach. Use when unsafe handles, foreign data models, error codes, or vendor types leak into domain code, or when planning a low-risk legacy rewrite."
+name: modernize-cpp-boundaries
+description: Isolate legacy code, C APIs, vendor SDKs, drivers, protocols, and unstable third-party libraries behind modern C++ adapters, PImpl facades, and anti-corruption layers, then migrate incrementally. Use when unsafe handles, foreign data models, error codes, macros, or vendor types leak into public or domain code, when ABI and rebuild isolation matter, or when planning a low-risk legacy rewrite.
 ---
+
 # Modernize C++ Boundaries
 
 Keep foreign ownership, naming, errors, threading, and data models at the system edge.
@@ -11,14 +13,18 @@ Keep foreign ownership, naming, errors, threading, and data models at the system
 2. Identify which foreign concepts must not enter the domain.
 3. Read [references/boundary-patterns.md](references/boundary-patterns.md).
 4. Define a small internal port in domain language.
-5. Implement an adapter that owns or borrows external resources explicitly.
-6. Translate errors, data, time, identifiers, and callbacks at the boundary.
-7. Add characterization and contract tests.
-8. For migrations, route one capability at a time and retain an observable rollback path.
+5. Choose a direct adapter, PImpl facade, or anti-corruption layer according to the isolation required.
+6. Implement the boundary with explicit ownership, borrowing, destruction, and complete-type rules.
+7. Translate errors, data, time, identifiers, and callbacks at the boundary.
+8. Add characterization and contract tests.
+9. For migrations, route one capability at a time and retain an observable rollback path.
 
 ## Boundary Rules
 
 - Wrap acquired resources in RAII types with correct deleters.
+- Use PImpl when public-header dependency isolation, ABI stability, or compile-time containment justifies its allocation and indirection.
+- Define special members out of line when `std::unique_ptr<Impl>` requires a complete implementation type.
+- Keep custom deleters aware of the required library, device, executor, or thread destruction context.
 - Make invalid states unrepresentable where practical.
 - Convert integer status codes into the project's established error model.
 - Validate buffer sizes, encodings, alignment, ranges, nullability, and lifetimes.

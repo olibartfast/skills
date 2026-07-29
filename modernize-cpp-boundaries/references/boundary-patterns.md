@@ -19,6 +19,18 @@ Keep the layer narrow. It should protect the domain, not become a second applica
 
 Use a direct adapter when models are already compatible and only an interface or call convention differs. Prefer composition around the foreign object. Document whether the adapter owns, borrows, pins, or copies each resource.
 
+## PImpl Boundary
+
+Use PImpl when a public C++ type must hide vendor headers, macros, volatile implementation types, or rebuild-heavy dependencies, or when a controlled ABI surface is required.
+
+- Keep `Impl` construction and destruction in the implementation file.
+- Declare the facade destructor and any move operations out of line when complete-type rules require it.
+- Decide whether copying is prohibited, deep, shared, or clone-based.
+- Treat allocation and indirection as costs to justify, especially for small or hot objects.
+- Do not use PImpl as a substitute for a coherent public contract.
+
+When the hidden resource requires a vendor-specific destroy function, device context, executor, or thread, encode that requirement in the implementation owner or custom deleter.
+
 ## Strangler Migration
 
 1. Characterize behavior and operational constraints.
@@ -36,6 +48,7 @@ Use a direct adapter when models are already compatible and only an interface or
 |---|---|
 | Construction | Invalid config, partial initialization, repeated creation |
 | Destruction | Normal, failure, callback in flight, wrong thread |
+| PImpl/ABI | Incomplete type, move/destruction, symbol visibility, version skew |
 | Buffers | Empty, maximum, undersized, misaligned, truncated |
 | Errors | Every documented status, unknown status, diagnostic preservation |
 | Concurrency | Concurrent calls, reentrancy, cancellation, teardown race |

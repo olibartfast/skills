@@ -8,5 +8,9 @@ exec npx skills@latest add olibartfast/skills \
   --skill engineer-cpp-dataflows \
   --skill model-cpp-domain-services \
   --skill harden-cpp-services \
+  --skill engineer-modern-cmake \
+  --skill manage-cpp-dependencies \
+  --skill test-cpp-software \
+  --skill harden-cpp-software \
   --yes \
   "$@"
