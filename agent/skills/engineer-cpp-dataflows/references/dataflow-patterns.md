@@ -41,6 +41,18 @@ Use for snapshot-style communication between one writer and readers when replaci
 - Queue occupancy is stored latency. A long queue can improve throughput while violating freshness.
 - Prefer rejecting work early when the downstream result would already miss its deadline.
 
+## Shutdown Protocol
+
+Define the state machine before implementing the queue:
+
+1. Running accepts pushes and permits pops.
+2. Closing rejects new work and either drains or cancels queued work according to policy.
+3. Closed wakes every blocked producer and consumer.
+4. Stage failure records one observable cause and triggers the chosen downstream and upstream cancellation behavior.
+5. Owners request stop, close queues, and join every thread in an order that cannot deadlock.
+
+For C++20 and later, `std::jthread` and stop tokens can simplify scoped thread ownership but do not replace queue-close semantics. For C++17, pair an explicit stop state with condition-variable predicates and deterministic joins. In either case, test close while empty, close while full, blocked push, blocked pop, failure in each stage, repeated stop requests, and teardown with work in flight.
+
 ## Verification
 
 - Measure p50, p95, p99, and maximum end-to-end latency.
@@ -48,4 +60,5 @@ Use for snapshot-style communication between one writer and readers when replaci
 - Test rates above steady-state capacity.
 - Stall each consumer independently.
 - Cancel during push, pop, processing, and shutdown.
+- Establish concurrency order with barriers, latches, promises, or observable state rather than arbitrary sleeps.
 - Run sanitizers appropriate to the codebase and stress lifetime transitions.

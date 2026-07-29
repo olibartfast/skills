@@ -1,13 +1,15 @@
 ---
-description: "Modernize C++ designs by replacing unnecessary inheritance, virtual interfaces, owning raw pointers, and hand-written GoF machinery with value semantics, RAII, variants, callables, concepts, templates, or type erasure. Use when reviewing or refactoring C++17/20/23 APIs, choosing static versus runtime polymorphism, simplifying Visitor or Strategy implementations, or explaining whether a classic pattern is still justified."
+name: modernize-cpp-design
+description: Design and modernize C++17/20/23 APIs using explicit ownership and lifetime contracts, value semantics, RAII, focused error models, variants, callables, concepts, templates, type erasure, or justified virtual interfaces. Use when creating or reviewing a public API, refactoring inheritance or owning raw pointers, choosing static versus runtime polymorphism, simplifying GoF machinery, or making invalid states and failure behavior explicit.
 ---
+
 # Modernize C++ Design
 
 Refactor toward the simplest mechanism that satisfies the actual variability, ownership, ABI, and performance requirements.
 
 ## Workflow
 
-1. Inspect the build standard, public ABI constraints, ownership model, extension model, and hot paths.
+1. Inspect the build standard, public ABI constraints, ownership and borrowing model, error model, extension model, and hot paths.
 2. State which axes vary:
    - values or behavior;
    - closed or open set of types;
@@ -23,6 +25,8 @@ Refactor toward the simplest mechanism that satisfies the actual variability, ow
 
 - Prefer ordinary values and composition before polymorphism.
 - Prefer RAII and the Rule of Zero for resource ownership.
+- Make ownership, borrowing, nullability, mutation, and lifetime visible in types and parameter choices.
+- Prefer return values for outputs. Use result or exception conventions consistently and preserve diagnostic context.
 - Use `std::variant` plus `std::visit` for a closed set of alternatives.
 - Use a callable for one interchangeable operation.
 - Use concepts or templates when implementations are known at compile time and code generation is acceptable.
@@ -34,6 +38,8 @@ Refactor toward the simplest mechanism that satisfies the actual variability, ow
 
 - Preserve observable behavior before changing representation.
 - Make ownership explicit; avoid introducing non-owning references that can dangle.
+- Do not return views, spans, iterators, references, or callbacks whose source lifetime is unclear.
+- Match `noexcept` to the real contract; do not use it to suppress or obscure failure.
 - Account for code size, compile time, error diagnostics, and ABI—not only runtime speed.
 - Verify `std::function` copyability and allocation behavior before choosing it. Use `std::move_only_function` only when C++23 library support is available.
 - Handle every `std::variant` alternative deliberately. Do not add a catch-all overload that masks missing domain cases.
@@ -47,6 +53,7 @@ Report:
 - the design pressure and constraints;
 - the chosen mechanism and rejected alternatives;
 - ownership and lifetime behavior;
+- error, nullability, and invalid-state behavior;
 - standard/library requirements;
 - compatibility and performance consequences;
 - tests or measurements performed.

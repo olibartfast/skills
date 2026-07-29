@@ -10,10 +10,10 @@
     },
     "compose-cpp-components": {
       "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
+      "ref": "agent/general-cpp-skills",
       "sourceType": "github",
       "skillPath": "compose-cpp-components/SKILL.md",
-      "computedHash": "4a4a3dc94b292339b91a426d6a6cbfb7f82af7fe8139da26e820c6de2398b87e"
+      "computedHash": "e26fe508e3abf3fa91ef819454b8094bdedfbe88ef0babbce3cb21a5c1048bb2"
     },
     "coordinate-cuda-thread-groups": {
       "source": "olibartfast/skills",
@@ -24,10 +24,10 @@
     },
     "design-ai-systems": {
       "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
+      "ref": "agent/general-cpp-skills",
       "sourceType": "github",
       "skillPath": "design-ai-systems/SKILL.md",
-      "computedHash": "11c32f9fb317bfae1e8dd84e3293b0291dcc026f82195eaa6d48c0e0431e94eb"
+      "computedHash": "d5401f4b3898ea2bd46acb607ed677f3da4560737bcdb4fe509e4c35341a2eb3"
     },
     "diagnose-cpu-performance": {
       "source": "olibartfast/skills",
@@ -36,19 +36,19 @@
       "skillPath": "diagnose-cpu-performance/SKILL.md",
       "computedHash": "7e9173b3a6baad11c60f9b277aeae3b0860c808275f5444c9d0f618422ae2828"
     },
-    "edit-cpu-optimization-kb": {
-      "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
-      "sourceType": "github",
-      "skillPath": "edit-cpu-optimization-kb/SKILL.md",
-      "computedHash": "f26050534fa2beaad797291b3cfc4ac65d24a65b92bfe881fc7b3afb7d6dc83a"
-    },
     "engineer-cpp-dataflows": {
       "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
+      "ref": "agent/general-cpp-skills",
       "sourceType": "github",
       "skillPath": "engineer-cpp-dataflows/SKILL.md",
-      "computedHash": "4f272758e17aab77dedf1593355e68059853c03432c791f7dac882679a8a450e"
+      "computedHash": "2acdc0efe0c3c51b745c660131b5805f86775e111b6d1d0de7021d340c4ffce4"
+    },
+    "engineer-modern-cmake": {
+      "source": "olibartfast/skills",
+      "ref": "agent/general-cpp-skills",
+      "sourceType": "github",
+      "skillPath": "engineer-modern-cmake/SKILL.md",
+      "computedHash": "65c0379dec592984edb5f4cb300a6293ea4f3b54a064f3906f07adea27e9a4f5"
     },
     "harden-cpp-services": {
       "source": "olibartfast/skills",
@@ -57,12 +57,26 @@
       "skillPath": "harden-cpp-services/SKILL.md",
       "computedHash": "41452d14e532f99a1f6b26910bb2270cc564a6c9cc47ae55096c9711b9f7d6db"
     },
+    "harden-cpp-software": {
+      "source": "olibartfast/skills",
+      "ref": "agent/general-cpp-skills",
+      "sourceType": "github",
+      "skillPath": "harden-cpp-software/SKILL.md",
+      "computedHash": "e4e5486d87a96e4969fa219e1f2cca44a4a7403f34a2168094287853dc67a9fb"
+    },
     "implement-cuda-data-primitives": {
       "source": "olibartfast/skills",
       "ref": "agent/cuda-parallel-programming-skills",
       "sourceType": "github",
       "skillPath": "implement-cuda-data-primitives/SKILL.md",
       "computedHash": "f3f9de6aa9d3f75cdb22850bcc8ebd8587b59caf601e2dd8eeea3d5d4e99389e"
+    },
+    "manage-cpp-dependencies": {
+      "source": "olibartfast/skills",
+      "ref": "agent/general-cpp-skills",
+      "sourceType": "github",
+      "skillPath": "manage-cpp-dependencies/SKILL.md",
+      "computedHash": "433518e6a1777d4867f62acb2b9ef939c4161d517d5c27e3890a33cd08f4279c"
     },
     "model-cpp-domain-services": {
       "source": "olibartfast/skills",
@@ -73,17 +87,17 @@
     },
     "modernize-cpp-boundaries": {
       "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
+      "ref": "agent/general-cpp-skills",
       "sourceType": "github",
       "skillPath": "modernize-cpp-boundaries/SKILL.md",
-      "computedHash": "1d54b1a258c62b0ee9a20d487b0ae3d3b717fc9c760949a7f66a838d72408058"
+      "computedHash": "2e0b747bd7ece0301d16d01db1e6ae813760a08aa36741757cac7c26832a5ace"
     },
     "modernize-cpp-design": {
       "source": "olibartfast/skills",
-      "ref": "agent/cuda-parallel-programming-skills",
+      "ref": "agent/general-cpp-skills",
       "sourceType": "github",
       "skillPath": "modernize-cpp-design/SKILL.md",
-      "computedHash": "4602b8fefb1f58cb8746ec9f44b0fc57266c80c768b6c229e6634a2364f0b4bd"
+      "computedHash": "33fa3d93ad6c79332f1a6a320d0f1e8979f18c3efb698454a58014d5f3bf3dd3"
     },
     "optimize-cuda-memory-locality": {
       "source": "olibartfast/skills",
@@ -119,6 +133,13 @@
       "sourceType": "github",
       "skillPath": "select-cuda-parallel-patterns/SKILL.md",
       "computedHash": "ce073b7f538c51c34897faa37a819619fbcca1d2afc601bf86fd9ab89881edcc"
+    },
+    "test-cpp-software": {
+      "source": "olibartfast/skills",
+      "ref": "agent/general-cpp-skills",
+      "sourceType": "github",
+      "skillPath": "test-cpp-software/SKILL.md",
+      "computedHash": "3d0c450f469ef7403a6724026d2789604cb57e5ec23ac7a6288d8f09e0bbf03a"
     }
   }
 }

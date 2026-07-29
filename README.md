@@ -80,7 +80,6 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`diagnose-cpu-performance`](diagnose-cpu-performance/) | Classify CPU bottlenecks from source, benchmarks, compiler output, and hardware counters |
 | [`review-cpp-simd`](review-cpp-simd/) | Review C++ kernels for auto-vectorization and portable SIMD readiness |
 | [`author-cpu-optimization-lab`](author-cpu-optimization-lab/) | Create deterministic, benchmark-driven C++17 optimization labs |
-| [`edit-cpu-optimization-kb`](edit-cpu-optimization-kb/) | Maintain a static CPU optimization learning catalog and MCP assistant |
 
 ### C++ Architecture and Design
 
@@ -92,6 +91,10 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`engineer-cpp-dataflows`](engineer-cpp-dataflows/) | Design bounded, low-latency C++ pipelines with explicit ownership and backpressure |
 | [`model-cpp-domain-services`](model-cpp-domain-services/) | Separate domain logic from persistence, transport, and deployment concerns |
 | [`harden-cpp-services`](harden-cpp-services/) | Add deadlines, bounded retries, circuit breakers, bulkheads, and graceful degradation |
+| [`engineer-modern-cmake`](engineer-modern-cmake/) | Design maintainable target-based CMake builds and configuration matrices |
+| [`manage-cpp-dependencies`](manage-cpp-dependencies/) | Resolve C++ dependencies reproducibly across package providers and offline environments |
+| [`test-cpp-software`](test-cpp-software/) | Design risk-based unit, integration, property, concurrency, and benchmark tests |
+| [`harden-cpp-software`](harden-cpp-software/) | Apply proportional warnings, analysis, sanitizer, fuzzing, and CI quality gates |
 
 ### CUDA Parallel Programming
 
@@ -123,6 +126,11 @@ The CPU optimization collection is based on
 [`olibartfast/cpu-optimizations-lab`](https://github.com/olibartfast/cpu-optimizations-lab),
 including its branch-prediction benchmark, performance rules, lab-authoring conventions, and
 static MCP learning assistant.
+
+The general C++ build, dependency, testing, quality, boundary, component, and dataflow guidance is
+also informed by [`olibartfast/rfdetr_inference`](https://github.com/olibartfast/rfdetr_inference),
+with project-specific names and commands removed so the practices apply across C++17/20/23
+libraries and applications.
 
 The CUDA collection is based on
 [Parallel Programming Pattern Fundamentals in CUDA](https://olibartfast.ninja/blog/cuda-parallel-programming-patterns.html)

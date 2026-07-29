@@ -1,4 +1,4 @@
 interface:
-  display_name: "Modernize C++ Design"
-  short_description: "Replace legacy patterns with modern C++ idioms"
-  default_prompt: "Use $modernize-cpp-design to refactor this inheritance-heavy C++ design using value semantics, concepts, callables, or type erasure."
+  display_name: "Design and Modernize C++"
+  short_description: "Design clear modern C++ APIs and abstractions"
+  default_prompt: "Use $modernize-cpp-design to design or refactor this C++ API with explicit ownership, errors, and appropriate polymorphism."

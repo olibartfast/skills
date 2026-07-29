@@ -14,9 +14,11 @@ Design from data movement, ownership, and latency budgets rather than from class
 3. Read [references/dataflow-patterns.md](references/dataflow-patterns.md).
 4. Define ownership transfer at every edge.
 5. Choose bounded queue capacities and an explicit overload policy.
-6. Remove avoidable copies and hot-path allocation only where measurements justify it.
-7. Instrument per-stage latency, queue depth, drops, stalls, allocation, and end-to-end percentiles.
-8. Stress shutdown, overload, slow consumers, producer failure, and resource exhaustion.
+6. Define normal drain, cancellation, stage failure, queue close, and blocked-wakeup behavior before starting threads.
+7. Select thread and cancellation facilities supported by the project's C++ standard.
+8. Remove avoidable copies and hot-path allocation only where measurements justify it.
+9. Instrument per-stage latency, queue depth, drops, stalls, allocation, and end-to-end percentiles.
+10. Stress shutdown, overload, slow consumers, producer failure, and resource exhaustion.
 
 ## Required Decisions
 
@@ -24,6 +26,7 @@ Design from data movement, ownership, and latency budgets rather than from class
 - Decide whether ordering is global, per key, or unnecessary.
 - Decide whether buffers are owned, borrowed, shared, or device-backed.
 - Define cancellation and queue-closing semantics.
+- Define whether blocked producers and consumers wake with a value, status, exception, or closed result.
 - Bound memory use under the worst admissible burst.
 - Define whether stale work remains valuable.
 
@@ -37,6 +40,9 @@ Design from data movement, ownership, and latency budgets rather than from class
 - Use double buffering only when readers can tolerate snapshots and overwrite semantics are explicit.
 - Avoid unbounded queues; they convert overload into latency and memory failure.
 - Prevent false sharing and oversubscription when assigning threads.
+- Prefer scoped thread ownership. Use `std::jthread` and stop tokens in C++20+ when they fit; otherwise provide an explicit stop state and guaranteed joins.
+- Keep condition-variable predicates under the same mutex as the state they protect and notify every waiter affected by close or cancellation.
+- Never detach pipeline threads to avoid designing shutdown.
 
 ## Deliverable
 

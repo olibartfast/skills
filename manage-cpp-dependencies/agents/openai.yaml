@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage C++ Dependencies"
+  short_description: "Design reproducible C++ dependency resolution"
+  default_prompt: "Use $manage-cpp-dependencies to design or review this C++ dependency workflow."

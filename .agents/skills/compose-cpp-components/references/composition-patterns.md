@@ -11,6 +11,7 @@ Adapted from [Modern C++ Design Patterns Beyond GoF](https://olibartfast.ninja/b
 | Deferred creation | Injected factory | Caller controls when creation occurs |
 | Startup wiring | Composition root | Owns graph construction and teardown |
 | Select implementation by configuration | Factory registry | Keys, duplicates, and unknown values are defined |
+| Select one implementation at build time | Conditional composition root | Options, sources, links, and definitions stay consistent |
 | Third-party runtime extension | Plugin boundary | ABI, version, lifetime, and unload policy are defined |
 | Cross-cutting lookup during migration | Constrained locator | Scope, initialization, and replacement are controlled |
 
@@ -31,6 +32,16 @@ Adapted from [Modern C++ Design Patterns Beyond GoF](https://olibartfast.ninja/b
 - Separate registration from lookup after startup when possible.
 - Freeze or synchronize mutation before concurrent access.
 - Test registration order independence.
+
+## Backend Selection Checklist
+
+- Is selection compile-time, startup-time, or runtime, and why?
+- Can multiple implementations coexist safely in one binary?
+- Does each backend advertise or validate supported inputs and capabilities?
+- Are backend-specific headers and dependencies contained?
+- Do invalid or missing selections fail before partially constructing the object graph?
+- Can tests inject a fake backend without loading a vendor runtime?
+- Are build options, factory behavior, documentation, and test matrices synchronized?
 
 ## Plugin Checklist
 

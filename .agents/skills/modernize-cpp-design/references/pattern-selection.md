@@ -14,8 +14,11 @@ Adapted from [Modern C++ Design Patterns Beyond GoF](https://olibartfast.ninja/b
 | Compile-time behavioral requirement | Concept + template | Marker base class | Can increase build time/code size |
 | Compile-time configuration | Policy-based design | Runtime branches | Avoid combinatorial instantiation |
 | Resource ownership | RAII value type | Manual cleanup protocol | Deleter and destruction context matter |
+| Required borrowed input | Reference, `std::span`, or `std::string_view` | Ambiguous raw owning pointer | Source must outlive the use |
+| Optional borrowed input | Nullable pointer or established optional-reference type | Sentinel object | Nullability must be part of the contract |
 | Optional result | `std::optional` | Sentinel value | Absence has no diagnostic |
 | Value or error | Project result type or `std::expected` (C++23) | Scattered status/out parameters | Preserve error context |
+| Exceptional failure | Project exception hierarchy where enabled | Catch-all translation at every layer | Document guarantees and cleanup |
 
 ## Review Questions
 
@@ -27,6 +30,8 @@ Adapted from [Modern C++ Design Patterns Beyond GoF](https://olibartfast.ninja/b
 6. Can template instantiation cost be tolerated?
 7. Who owns the object, callback target, or captured state?
 8. Does the proposed abstraction make domain intent clearer?
+9. Can any returned view, iterator, callback, or reference outlive its source?
+10. Are nullability, mutation, errors, and invalid states explicit?
 
 ## Common Failure Modes
 
@@ -35,4 +40,7 @@ Adapted from [Modern C++ Design Patterns Beyond GoF](https://olibartfast.ninja/b
 - Using `shared_ptr` to avoid deciding ownership.
 - Replacing a small virtual interface with complex custom type erasure.
 - Using concepts as documentation while accepting semantically invalid types.
+- Returning a view into temporary, moved-from, or internally replaceable storage.
+- Mixing exceptions, status values, and out parameters without a boundary policy.
+- Marking operations `noexcept` when allocation, callbacks, or dependencies can throw.
 - Claiming static dispatch is faster without measuring the end-to-end workload.
