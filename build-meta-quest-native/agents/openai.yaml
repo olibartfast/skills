@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Native Meta Quest Apps"
+  short_description: "Build native OpenXR apps for Meta Quest"
+  default_prompt: "Use $build-meta-quest-native to implement this native OpenXR feature for Meta Quest."

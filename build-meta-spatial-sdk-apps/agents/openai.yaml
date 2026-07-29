@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Meta Spatial SDK Apps"
+  short_description: "Build spatial Android apps for Meta Quest"
+  default_prompt: "Use $build-meta-spatial-sdk-apps to implement this spatial feature in my Android app."
