@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Meta Quest Unity Apps"
+  short_description: "Build and troubleshoot Meta Quest Unity apps"
+  default_prompt: "Use $build-meta-quest-unity to implement this Meta Quest feature in my Unity project."

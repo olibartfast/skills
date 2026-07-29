@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Meta Horizon Docs"
+  short_description: "Find current Meta Horizon developer guidance"
+  default_prompt: "Use $research-meta-horizon-docs to find the current official guidance for my Meta Horizon development question."

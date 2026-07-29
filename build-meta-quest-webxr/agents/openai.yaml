@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Meta Quest WebXR Apps"
+  short_description: "Build WebXR experiences for Meta Quest"
+  default_prompt: "Use $build-meta-quest-webxr to implement this immersive web experience for Meta Quest."

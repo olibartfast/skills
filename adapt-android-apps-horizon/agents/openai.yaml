@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adapt Android Apps for Horizon"
+  short_description: "Adapt Android apps for Meta Horizon OS"
+  default_prompt: "Use $adapt-android-apps-horizon to make this Android app work well on Meta Horizon OS."

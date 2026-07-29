@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Meta Quest Unreal Apps"
+  short_description: "Build and troubleshoot Meta Quest Unreal apps"
+  default_prompt: "Use $build-meta-quest-unreal to implement this Meta Quest feature in my Unreal project."

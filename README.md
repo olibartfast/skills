@@ -39,7 +39,39 @@ npx skills@latest add olibartfast/skills \
 Project installation is the default. Add `--global` to make the selected skills available to the
 selected agents across all projects.
 
+### Install by topic
+
+Use the bundled scripts to install one complete topic for agents detected by the `skills` CLI:
+
+```bash
+./scripts/install-meta-horizon-skills.sh
+./scripts/install-cpu-optimization-skills.sh
+./scripts/install-cpp-architecture-skills.sh
+./scripts/install-cuda-parallel-programming-skills.sh
+```
+
+The scripts install non-interactively into the current project without hardcoding an agent.
+Pass additional supported `skills add` options after the script name; for example:
+
+```bash
+./scripts/install-cuda-parallel-programming-skills.sh --global
+./scripts/install-cuda-parallel-programming-skills.sh --agent codex
+./scripts/install-cuda-parallel-programming-skills.sh --agent '*'
+```
+
 ## Skill Catalog
+
+### Meta Horizon OS and Meta Quest
+
+| Skill | Purpose |
+| --- | --- |
+| [`research-meta-horizon-docs`](research-meta-horizon-docs/) | Find current official documentation and API guidance across Horizon build paths |
+| [`build-meta-quest-unity`](build-meta-quest-unity/) | Build, debug, and optimize Meta Quest applications in Unity |
+| [`build-meta-quest-unreal`](build-meta-quest-unreal/) | Build, debug, and optimize Meta Quest applications in Unreal Engine |
+| [`build-meta-spatial-sdk-apps`](build-meta-spatial-sdk-apps/) | Build spatial and hybrid Android applications with Meta Spatial SDK |
+| [`adapt-android-apps-horizon`](adapt-android-apps-horizon/) | Adapt conventional Android applications for Meta Horizon OS |
+| [`build-meta-quest-native`](build-meta-quest-native/) | Build native C/C++ Meta Quest applications with OpenXR |
+| [`build-meta-quest-webxr`](build-meta-quest-webxr/) | Build immersive web experiences for Meta Quest Browser |
 
 ### CPU Optimization
 
@@ -95,6 +127,10 @@ static MCP learning assistant.
 The CUDA collection is based on
 [Parallel Programming Pattern Fundamentals in CUDA](https://olibartfast.ninja/blog/cuda-parallel-programming-patterns.html)
 and reconciled with current NVIDIA CUDA, CCCL, and Nsight documentation.
+
+The Meta Horizon collection is based on Meta's
+[LLM resources for AI](https://developers.meta.com/horizon/essentials/ai-solutions/) and routes
+agents to the current LLM-optimized documentation and API indexes for each supported build path.
 
 Additional structural references:
 
