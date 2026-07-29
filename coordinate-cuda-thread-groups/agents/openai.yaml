@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coordinate CUDA Thread Groups"
+  short_description: "Use warp and cooperative-group primitives safely"
+  default_prompt: "Use $coordinate-cuda-thread-groups to design or review synchronization and collective communication in this CUDA kernel."
