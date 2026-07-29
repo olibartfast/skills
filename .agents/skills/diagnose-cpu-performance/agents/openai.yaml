@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose CPU Performance"
+  short_description: "Classify CPU bottlenecks from measured evidence"
+  default_prompt: "Use $diagnose-cpu-performance to classify this benchmark bottleneck and recommend the next measurement."

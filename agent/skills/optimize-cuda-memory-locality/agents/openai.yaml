@@ -1,0 +1,4 @@
+interface:
+  display_name: "Optimize CUDA Memory Locality"
+  short_description: "Design tiled and stencil CUDA kernels"
+  default_prompt: "Use $optimize-cuda-memory-locality to improve the tiling, shared-memory reuse, and boundary handling in this CUDA kernel."

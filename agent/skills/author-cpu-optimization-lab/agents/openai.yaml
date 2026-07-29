@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author CPU Optimization Lab"
+  short_description: "Build benchmark-driven C++ optimization labs"
+  default_prompt: "Use $author-cpu-optimization-lab to create a deterministic C++17 exercise for this CPU optimization topic."

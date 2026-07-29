@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineer C++ Dataflows"
+  short_description: "Build low-latency pipelines with clear ownership"
+  default_prompt: "Use $engineer-cpp-dataflows to design this real-time C++ pipeline with bounded queues, explicit ownership, and predictable allocation."
