@@ -9,10 +9,21 @@ package contains a `SKILL.md` and can be installed independently in compatible c
 
 | Skill | Purpose |
 | --- | --- |
-| [`diagnose-cpu-performance`](skills/diagnose-cpu-performance/) | Classify CPU bottlenecks from source, benchmarks, compiler output, and hardware counters |
-| [`review-cpp-simd`](skills/review-cpp-simd/) | Review C++ kernels for auto-vectorization and portable SIMD readiness |
-| [`author-cpu-optimization-lab`](skills/author-cpu-optimization-lab/) | Create deterministic, benchmark-driven C++17 optimization labs |
-| [`edit-cpu-optimization-kb`](skills/edit-cpu-optimization-kb/) | Maintain a static CPU optimization learning catalog and MCP assistant |
+| [`diagnose-cpu-performance`](diagnose-cpu-performance/) | Classify CPU bottlenecks from source, benchmarks, compiler output, and hardware counters |
+| [`review-cpp-simd`](review-cpp-simd/) | Review C++ kernels for auto-vectorization and portable SIMD readiness |
+| [`author-cpu-optimization-lab`](author-cpu-optimization-lab/) | Create deterministic, benchmark-driven C++17 optimization labs |
+| [`edit-cpu-optimization-kb`](edit-cpu-optimization-kb/) | Maintain a static CPU optimization learning catalog and MCP assistant |
+
+### C++ Architecture and Design
+
+| Skill | Purpose |
+| --- | --- |
+| [`modernize-cpp-design`](modernize-cpp-design/) | Select modern C++ design mechanisms and simplify legacy pattern implementations |
+| [`modernize-cpp-boundaries`](modernize-cpp-boundaries/) | Isolate legacy code and external APIs behind safe modern C++ boundaries |
+| [`compose-cpp-components`](compose-cpp-components/) | Build explicit dependency graphs, composition roots, factories, and plugin registries |
+| [`engineer-cpp-dataflows`](engineer-cpp-dataflows/) | Design bounded, low-latency C++ pipelines with explicit ownership and backpressure |
+| [`model-cpp-domain-services`](model-cpp-domain-services/) | Separate domain logic from persistence, transport, and deployment concerns |
+| [`harden-cpp-services`](harden-cpp-services/) | Add deadlines, bounded retries, circuit breakers, bulkheads, and graceful degradation |
 
 ### CUDA Parallel Programming
 
@@ -31,10 +42,7 @@ Install from this repository with a compatible skills client, or copy one comple
 directory into the skills directory recognized by your agent:
 
 ```bash
-# Skill stored under skills/
-cp -r skills/diagnose-cpu-performance ~/.codex/skills/
-
-# Top-level skill
+cp -r diagnose-cpu-performance ~/.codex/skills/
 cp -r select-cuda-parallel-patterns ~/.codex/skills/
 ```
 

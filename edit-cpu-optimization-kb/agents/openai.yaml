@@ -1,0 +1,4 @@
+interface:
+  display_name: "Edit CPU Optimization KB"
+  short_description: "Maintain the static CPU learning-resource catalog"
+  default_prompt: "Use $edit-cpu-optimization-kb to add this resource to the CPU optimization MCP knowledge base."
