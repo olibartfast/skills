@@ -3,6 +3,42 @@
 Portable agent skills derived from practical engineering repositories and technical guides. Each
 package contains a `SKILL.md` and can be installed independently in compatible coding agents.
 
+## Install with `npx`
+
+Install every skill in this repository for every agent supported by the
+[`skills`](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills@latest add olibartfast/skills --all
+```
+
+List the available skills without installing them:
+
+```bash
+npx skills@latest add olibartfast/skills --list
+```
+
+Install one skill for all supported agents:
+
+```bash
+npx skills@latest add olibartfast/skills \
+  --skill profile-optimize-cuda \
+  --agent '*' \
+  --yes
+```
+
+Install all skills for a specific agent:
+
+```bash
+npx skills@latest add olibartfast/skills \
+  --skill '*' \
+  --agent codex \
+  --yes
+```
+
+Project installation is the default. Add `--global` to make the selected skills available to the
+selected agents across all projects.
+
 ## Skill Catalog
 
 ### CPU Optimization
@@ -36,10 +72,10 @@ package contains a `SKILL.md` and can be installed independently in compatible c
 | [`pipeline-cuda-streams`](pipeline-cuda-streams/) | Overlap transfers and computation with asynchronous stream pipelines |
 | [`profile-optimize-cuda`](profile-optimize-cuda/) | Diagnose CUDA bottlenecks with NVIDIA profiling tools |
 
-## Install
+## Manual installation
 
-Install from this repository with a compatible skills client, or copy one complete skill
-directory into the skills directory recognized by your agent:
+If `npx` is unavailable, copy one complete skill directory into the skills directory recognized
+by your agent:
 
 ```bash
 cp -r diagnose-cpu-performance ~/.codex/skills/
