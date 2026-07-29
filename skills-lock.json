@@ -2,88 +2,122 @@
   "version": 1,
   "skills": {
     "author-cpu-optimization-lab": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "author-cpu-optimization-lab/SKILL.md",
       "computedHash": "c55204a321847c7fedc7656f27ef0bf8c2fa5d718e65aeef60e8ad4d88fa97cc"
     },
     "compose-cpp-components": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "compose-cpp-components/SKILL.md",
       "computedHash": "4a4a3dc94b292339b91a426d6a6cbfb7f82af7fe8139da26e820c6de2398b87e"
     },
     "coordinate-cuda-thread-groups": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "coordinate-cuda-thread-groups/SKILL.md",
       "computedHash": "a088f4a053f6839579dbc51444955b73c155fee196428690b0de5e8d5a584b55"
     },
     "design-ai-systems": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "design-ai-systems/SKILL.md",
       "computedHash": "11c32f9fb317bfae1e8dd84e3293b0291dcc026f82195eaa6d48c0e0431e94eb"
     },
     "diagnose-cpu-performance": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "diagnose-cpu-performance/SKILL.md",
       "computedHash": "7e9173b3a6baad11c60f9b277aeae3b0860c808275f5444c9d0f618422ae2828"
     },
     "edit-cpu-optimization-kb": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "edit-cpu-optimization-kb/SKILL.md",
       "computedHash": "f26050534fa2beaad797291b3cfc4ac65d24a65b92bfe881fc7b3afb7d6dc83a"
     },
     "engineer-cpp-dataflows": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "engineer-cpp-dataflows/SKILL.md",
       "computedHash": "4f272758e17aab77dedf1593355e68059853c03432c791f7dac882679a8a450e"
     },
     "harden-cpp-services": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "harden-cpp-services/SKILL.md",
       "computedHash": "41452d14e532f99a1f6b26910bb2270cc564a6c9cc47ae55096c9711b9f7d6db"
     },
     "implement-cuda-data-primitives": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "implement-cuda-data-primitives/SKILL.md",
       "computedHash": "f3f9de6aa9d3f75cdb22850bcc8ebd8587b59caf601e2dd8eeea3d5d4e99389e"
     },
     "model-cpp-domain-services": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "model-cpp-domain-services/SKILL.md",
       "computedHash": "ff6cd4a52d2d25f384770ece1c7769603e07925b7c27173fc3125c0153bc5a19"
     },
     "modernize-cpp-boundaries": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "modernize-cpp-boundaries/SKILL.md",
       "computedHash": "1d54b1a258c62b0ee9a20d487b0ae3d3b717fc9c760949a7f66a838d72408058"
     },
     "modernize-cpp-design": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "modernize-cpp-design/SKILL.md",
       "computedHash": "4602b8fefb1f58cb8746ec9f44b0fc57266c80c768b6c229e6634a2364f0b4bd"
     },
     "optimize-cuda-memory-locality": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "optimize-cuda-memory-locality/SKILL.md",
       "computedHash": "59ed850d12e2561db1eacd4a81dfd4bea5b5815dbac797625e3af35490e0ff50"
     },
     "pipeline-cuda-streams": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "pipeline-cuda-streams/SKILL.md",
       "computedHash": "73a830b43d09cfc72f85f4bb0144924a6afd4849dbc34fb7262824fee620e576"
     },
     "profile-optimize-cuda": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "profile-optimize-cuda/SKILL.md",
       "computedHash": "ba6b22db220d9fc48860aae02520b43741906652ac44d5bb785ba50cc196e0c6"
     },
     "review-cpp-simd": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "review-cpp-simd/SKILL.md",
       "computedHash": "781e7b8662f38c8fcfb7a84e8e458ee62d774ccdedcc4772b1ab04a58b391534"
     },
     "select-cuda-parallel-patterns": {
-      "source": "/home/oli/repos/skills",
-      "sourceType": "local",
+      "source": "olibartfast/skills",
+      "ref": "agent/cuda-parallel-programming-skills",
+      "sourceType": "github",
+      "skillPath": "select-cuda-parallel-patterns/SKILL.md",
       "computedHash": "ce073b7f538c51c34897faa37a819619fbcca1d2afc601bf86fd9ab89881edcc"
     }
   }
