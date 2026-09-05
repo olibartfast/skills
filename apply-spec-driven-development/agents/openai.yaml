@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apply Spec-Driven Development"
+  short_description: "Turn intent into living, validated feature specs"
+  default_prompt: "Use $apply-spec-driven-development to discover requirements, define validation before implementation, plan thin phases, and keep specs synchronized through integration."

@@ -48,6 +48,7 @@ Use the bundled scripts to install one complete topic for agents detected by the
 ./scripts/install-cpu-optimization-skills.sh
 ./scripts/install-cpp-architecture-skills.sh
 ./scripts/install-cuda-parallel-programming-skills.sh
+./scripts/install-ai-coding-workflow-skills.sh
 ```
 
 The scripts install non-interactively into the current project without hardcoding an agent.
@@ -80,6 +81,14 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`diagnose-cpu-performance`](diagnose-cpu-performance/) | Classify CPU bottlenecks from source, benchmarks, compiler output, and hardware counters |
 | [`review-cpp-simd`](review-cpp-simd/) | Review C++ kernels for auto-vectorization and portable SIMD readiness |
 | [`author-cpu-optimization-lab`](author-cpu-optimization-lab/) | Create deterministic, benchmark-driven C++17 optimization labs |
+
+### AI Coding Workflows
+
+| Skill | Purpose |
+| --- | --- |
+| [`orchestrate-ai-coding-workflows`](orchestrate-ai-coding-workflows/) | Delegate approved coding phases across models with explicit permissions, handoffs, and measurement |
+| [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
+| [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 
 ### C++ Architecture and Design
 
@@ -135,6 +144,20 @@ libraries and applications.
 The CUDA collection is based on
 [Parallel Programming Pattern Fundamentals in CUDA](https://olibartfast.ninja/blog/cuda-parallel-programming-patterns.html)
 and reconciled with current NVIDIA CUDA, CCCL, and Nsight documentation.
+
+The AI coding workflow skill is based on
+[AI Coding Workflows: From Cloud to Local](https://olibartfast.ninja/blog/ai-coding-workflows-cloud-to-local.html),
+adapted into an agent skill rather than reproduced. It is based on and informed by the
+DeepLearning.AI short course
+[AI Coding Workflows: From Cloud to Local](https://www.deeplearning.ai/short-courses/ai-coding-workflows-from-cloud-to-local/)
+and its [companion repository](https://github.com/https-deeplearning-ai/sc-ai-coding-workflows-files).
+
+The spec-driven development skill is based on
+[AI Spec-Driven Development Workflow](https://olibartfast.ninja/blog/ai-spec-driven-development-workflow.html),
+adapted into an agent skill rather than reproduced. It is also informed by the
+DeepLearning.AI short course [Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/short-courses/spec-driven-development-with-coding-agents/)
+and its
+[companion repository](https://github.com/https-deeplearning-ai/sc-spec-driven-development-files).
 
 The Meta Horizon collection is based on Meta's
 [LLM resources for AI](https://developers.meta.com/horizon/essentials/ai-solutions/) and routes

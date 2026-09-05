@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestrate AI Coding Workflows"
+  short_description: "Design model-replaceable coding workflow contracts"
+  default_prompt: "Use $orchestrate-ai-coding-workflows to design the engineering contracts, handoff packets, permissions, and scoreboards for delegating coding work across replaceable models."
