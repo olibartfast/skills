@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Gitflow Workflow"
+  short_description: "Safely coordinate Gitflow branches and releases"
+  default_prompt: "Use $manage-gitflow-workflow to inspect this repository's branch policy and guide the appropriate feature, release, or hotfix lifecycle with explicit merge destinations and verification."

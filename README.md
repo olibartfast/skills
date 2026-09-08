@@ -90,6 +90,12 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
 | [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 
+### Git Workflows
+
+| Skill | Purpose |
+| --- | --- |
+| [`manage-gitflow-workflow`](manage-gitflow-workflow/) | Manage Gitflow features, releases, and hotfixes with safe integration, tagging, and back-merges |
+
 ### C++ Architecture and Design
 
 | Skill | Purpose |
@@ -158,6 +164,11 @@ adapted into an agent skill rather than reproduced. It is also informed by the
 DeepLearning.AI short course [Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/short-courses/spec-driven-development-with-coding-agents/)
 and its
 [companion repository](https://github.com/https-deeplearning-ai/sc-spec-driven-development-files).
+
+The Gitflow workflow skill is based on
+[Atlassian's Gitflow Workflow tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow),
+adapted into operational guidance with explicit safety and verification gates. It retains
+the tutorial's warning that Gitflow is a legacy workflow rather than a default for modern CI/CD.
 
 The Meta Horizon collection is based on Meta's
 [LLM resources for AI](https://developers.meta.com/horizon/essentials/ai-solutions/) and routes
