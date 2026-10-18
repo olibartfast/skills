@@ -72,7 +72,8 @@ Create once under `specs/`, update when decisions change, keep short and stable:
    itself is wrong or incomplete, review and update requirements, plan, and validation
    with the reason recorded.
 9. **Integrate and report.** Update `specs/roadmap.md` status, the changelog, and any
-   user-facing docs with the release. Note deviations between spec and shipped behavior.
+   user-facing docs with the release. Validate links, anchors, and terminology before
+   merging. Note deviations between spec and shipped behavior.
 10. **Replan after feedback.** When integration, review, or usage reveals a wrong early
    decision, revise the affected artifacts and slice again — replanning is expected, not failure.
 
@@ -84,6 +85,21 @@ in the PR. Use full packets when the work is multi-phase, touches public behavio
 architecture, or reversibility is low. Never skip the validation-before-code step for
 non-trivial changes; skipping paperwork is fine, skipping thought is not.
 
+## Documentation quality
+
+Specs, plans, validation evidence, handoff notes, and user-facing docs are read by
+engineers and future agents. Write for an experienced software engineer who should
+understand the concepts, architecture, and requirements without unnecessary cognitive
+overhead. Prefer clear, natural technical language and descriptive headings; explain
+concepts before implementation details; and let stable IDs support traceability instead
+of dominating prose.
+
+When revising existing documentation, inspect its structure and conventions first, apply
+the improvements consistently, and then validate links, terminology, and preserved
+requirements. Follow [documentation-quality.md](references/documentation-quality.md) for
+the full guidelines and editing procedure, including how to report ambiguities that
+cannot be resolved without changing technical meaning.
+
 ## Deliverable
 
 A completed run of this skill produces:
@@ -92,7 +108,8 @@ A completed run of this skill produces:
 - A feature packet under `specs/YYYY-MM-DD-feature-name/` with `requirements.md`,
   `plan.md`, and `validation.md` (traceable to requirements) reflecting what was actually built.
 - Executed validation evidence with dates in `validation.md`.
-- Updated roadmap, changelog, and docs for anything shipped.
+- Updated roadmap, changelog, and docs for anything shipped, with links, anchors, and
+  terminology validated for readability.
 - A short summary of deviations and any replans performed.
 
 ## References
@@ -103,3 +120,4 @@ A completed run of this skill produces:
 - [validation-and-traceability.md](references/validation-and-traceability.md) — requirement-to-check tracing and evidence formats.
 - [brownfield-adoption.md](references/brownfield-adoption.md) — introducing specs into an existing codebase incrementally.
 - [integration-spec-sync-and-replanning.md](references/integration-spec-sync-and-replanning.md) — living-spec updates, roadmap/changelog sync, replan triggers.
+- [documentation-quality.md](references/documentation-quality.md) — readability guidelines, identifier discipline, and the documentation editing pass.

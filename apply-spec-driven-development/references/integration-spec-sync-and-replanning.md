@@ -109,9 +109,14 @@ baseline), verify before accepting:
    cases) are recorded in the roadmap, not only in someone's memory.
 6. **Handoff quality** (see the check below if the next executor is not the
    author).
+7. **Readability**: headings describe concepts, terminology is consistent, links
+   and anchors resolve, and identifiers remain where traceability or tooling
+   needs them (see
+   [documentation-quality.md](documentation-quality.md)).
 
-Gate rule: a failed consistency or completeness item blocks the merge with a
-required follow-up *in the same branch*, not a documentation ticket.
+Gate rule: a failed consistency, completeness, or readability item blocks the
+merge with a required follow-up *in the same branch*, not a documentation
+ticket.
 
 ## Roadmap status and replanning after evidence
 

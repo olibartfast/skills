@@ -28,6 +28,10 @@ Shorthand to keep in mind while filling them in:
   repeated efforts are distinguishable and history stays searchable.
 - Use stable IDs (`R-1`, `D-1`, `V-1`, `T-2` …) so requirements, tasks, and
   evidence can reference each other without ambiguity.
+- Let IDs serve traceability rather than dominate the prose. Write descriptive
+  headings and natural language, and add an ID where a cross-reference needs
+  it. See [documentation-quality.md](documentation-quality.md) for the
+  readability pass and identifier rules.
 - Every statement should fall into exactly one bucket: a *finding* (observed,
   citable), an *inference* (derived, plausible, confirmable), or an
   *assumption* (accepted without evidence, usually about the future).
