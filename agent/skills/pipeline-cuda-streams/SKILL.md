@@ -1,6 +1,8 @@
 ---
-description: "Design, implement, debug, and review CUDA stream pipelines that overlap host/device transfers, kernels, and independent work. Use for cudaMemcpyAsync, pinned host memory, events, stream ordering, double or triple buffering, multi-stream execution, CUDA Graphs, default-stream hazards, or end-to-end throughput and latency tuning."
+name: pipeline-cuda-streams
+description: Design and review CUDA stream pipelines that overlap host/device transfers, kernels, and independent work. Use for cudaMemcpyAsync, pinned host memory, events, stream ordering and buffering, CUDA Graphs, and throughput tuning.
 ---
+
 # Pipeline CUDA Streams
 
 Build asynchronous pipelines from an explicit dependency graph. Distinguish enqueue time from completion time and requested concurrency from concurrency actually observed.

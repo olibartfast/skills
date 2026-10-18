@@ -1,6 +1,8 @@
 ---
-description: "Profile, diagnose, and optimize CUDA applications and kernels with evidence from Nsight Systems, Nsight Compute, benchmarks, and correctness tests. Use for slow CUDA code, low utilization, memory or compute bottlenecks, occupancy questions, divergence, launch overhead, poor transfer overlap, optimization reviews, or performance regressions."
+name: profile-optimize-cuda
+description: Profile and optimize CUDA applications and kernels with evidence from Nsight Systems/Compute, benchmarks, and correctness tests. Use for slow CUDA code, low utilization, memory or compute bottlenecks, launch overhead, or performance regressions.
 ---
+
 # Profile and Optimize CUDA
 
 Optimize the measured bottleneck, preserve correctness, and report uncertainty. Do not infer a kernel bottleneck from source alone when profiling is available.

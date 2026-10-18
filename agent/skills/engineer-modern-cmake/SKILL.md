@@ -1,6 +1,6 @@
 ---
 name: engineer-modern-cmake
-description: Design, review, and refactor maintainable CMake builds for C++17/20/23 projects using target-based usage requirements, explicit options, optional components, presets, generated configuration, installation, and package exports. Use when CMakeLists.txt has global flags or include paths, transitive dependency problems, selectable backends, duplicated configuration, fragile tests, or unclear build and install interfaces.
+description: Design and refactor maintainable CMake builds for C++17/20/23 projects using target-based usage requirements, explicit options, and package exports. Use when CMakeLists.txt has global flags or include paths, transitive dependency problems, selectable backends, duplicated configuration, or fragile tests.
 ---
 
 # Engineer Modern CMake

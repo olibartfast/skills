@@ -1,6 +1,6 @@
 ---
 name: modernize-cpp-boundaries
-description: Isolate legacy code, C APIs, vendor SDKs, drivers, protocols, and unstable third-party libraries behind modern C++ adapters, PImpl facades, and anti-corruption layers, then migrate incrementally. Use when unsafe handles, foreign data models, error codes, macros, or vendor types leak into public or domain code, when ABI and rebuild isolation matter, or when planning a low-risk legacy rewrite.
+description: Isolate legacy code and vendor APIs behind modern C++ adapters, PImpl facades, and anti-corruption layers, then migrate incrementally. Use when unsafe handles, foreign data models, or vendor types leak into public code, or when planning a low-risk legacy rewrite.
 ---
 
 # Modernize C++ Boundaries

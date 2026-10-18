@@ -1,6 +1,8 @@
 ---
-description: "Select and compose CUDA parallel programming patterns for a GPU workload. Use when planning, explaining, or reviewing a CUDA algorithm; deciding among map, reduction, prefix scan, tiling, stencil, gather/scatter, warp collectives, cooperative groups, and stream parallelism; or deciding whether to use an NVIDIA library instead of a custom kernel."
+name: select-cuda-parallel-patterns
+description: Select and compose CUDA parallel programming patterns for a GPU workload. Use when planning, explaining, or reviewing a CUDA algorithm; deciding among map, reduction, prefix scan, tiling, stencil, gather/scatter, warp collectives, cooperative groups, and stream parallelism; or deciding whether to use an NVIDIA library instead of a custom kernel.
 ---
+
 # Select CUDA Parallel Patterns
 
 Turn workload semantics into a library choice, execution decomposition, memory plan, and validation strategy.

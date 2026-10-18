@@ -1,6 +1,6 @@
 ---
 name: build-meta-quest-native
-description: Build, debug, and optimize native C or C++ Meta Quest applications with OpenXR, Android NDK, Vulkan or OpenGL ES, JNI, and Quest platform capabilities. Use when implementing an OpenXR loader or frame loop, extensions, graphics bindings, input, composition layers, lifecycle, permissions, native rendering, performance tooling, or migrating legacy VrApi code.
+description: Build and optimize native C or C++ Meta Quest applications with OpenXR and the Android NDK, plus Vulkan/OpenGL ES, JNI, and Quest platform capabilities. Use when implementing an OpenXR loader/frame loop and extension handling, graphics bindings, composition layers, input and lifecycle handling, or native rendering and performance tooling, including VrApi migration.
 ---
 
 # Build Native Meta Quest Apps

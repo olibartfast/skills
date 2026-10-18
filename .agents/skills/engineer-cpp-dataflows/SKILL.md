@@ -1,6 +1,6 @@
 ---
 name: engineer-cpp-dataflows
-description: Design and review low-latency C++ pipelines for camera, audio, robotics, networking, streaming, and ML inference workloads using producer-consumer stages, bounded queues, backpressure, zero-copy ownership transfer, object pools, and double buffering. Use when throughput, tail latency, allocation, copying, queue growth, or stage isolation matters.
+description: Design and review low-latency C++ pipelines for camera and audio, robotics and networking, or streaming and ML inference, using bounded queues and backpressure with zero-copy ownership and double buffering. Use when throughput and tail latency, allocation and copying, queue growth, or stage isolation matters.
 ---
 
 # Engineer C++ Dataflows

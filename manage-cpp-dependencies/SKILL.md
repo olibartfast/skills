@@ -1,6 +1,6 @@
 ---
 name: manage-cpp-dependencies
-description: Design, review, and repair reproducible C++ dependency resolution across system packages, Conan, vcpkg, FetchContent, vendored sources, and pre-provided roots. Use when adding or upgrading a dependency, supporting multiple package providers, enforcing offline builds, creating imported-target facades, diagnosing inconsistent versions, or synchronizing dependency declarations across CMake, manifests, containers, CI, and documentation.
+description: Design and repair reproducible C++ dependency resolution across system packages, Conan or vcpkg, FetchContent, and vendored sources. Use when adding or upgrading a dependency, supporting multiple providers, enforcing offline builds, or synchronizing declarations across CMake manifests and CI.
 ---
 
 # Manage C++ Dependencies

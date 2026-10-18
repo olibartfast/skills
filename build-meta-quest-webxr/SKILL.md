@@ -1,6 +1,6 @@
 ---
 name: build-meta-quest-webxr
-description: Build, debug, and optimize immersive web experiences for Meta Quest Browser using WebXR, WebGL, WebXR media layers, or Meta Immersive Web SDK. Use when implementing XR session setup, reference spaces, input, hands, interactions, ECS systems, rendering, spatial audio or video, browser compatibility, remote debugging, graceful non-XR fallback, or web deployment.
+description: Build and optimize immersive web experiences for Meta Quest Browser using WebXR, WebGL, and media layers through the Meta Immersive Web SDK. Use when implementing XR session setup and reference spaces, input and hand interactions, ECS systems and rendering, spatial audio/video, browser compatibility, remote debugging, or graceful non-XR fallback and web deployment.
 ---
 
 # Build Meta Quest WebXR Apps

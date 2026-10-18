@@ -1,6 +1,8 @@
 ---
-description: "Diagnose C and C++ CPU performance problems from source, benchmark results, compiler output, and hardware counters. Use when a hot loop, benchmark regression, low IPC, branch misses, cache misses, frontend stalls, memory latency, TLB pressure, or unclear CPU bottleneck needs measurement-driven classification before optimization."
+name: diagnose-cpu-performance
+description: Diagnose C and C++ CPU performance problems from source, benchmark results, compiler output, and hardware counters. Use when a hot loop, benchmark regression, low IPC, branch misses, cache misses, frontend stalls, memory latency, TLB pressure, or unclear CPU bottleneck needs measurement-driven classification before optimization.
 ---
+
 # Diagnose CPU Performance
 
 Classify the dominant bottleneck before proposing code changes. Preserve correctness and

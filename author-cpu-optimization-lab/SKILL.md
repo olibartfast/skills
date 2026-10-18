@@ -1,6 +1,6 @@
 ---
 name: author-cpu-optimization-lab
-description: Create or extend hands-on C++17 CPU optimization labs with deterministic baselines, optimized variants, CMake targets, correctness checks, profiling instructions, and measurable learning goals. Use for teaching branch prediction, cache locality, SIMD, memory bandwidth, data layout, ILP, TLB behavior, or other modern CPU performance concepts.
+description: Create or extend hands-on C++17 CPU optimization labs with deterministic baselines, optimized variants, and reproducible profiling. Use for teaching modern CPU performance concepts such as branch prediction, cache locality, SIMD, memory bandwidth, and data layout, including ILP and TLB behavior.
 ---
 
 # Author a CPU Optimization Lab

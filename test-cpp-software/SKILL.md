@@ -1,6 +1,6 @@
 ---
 name: test-cpp-software
-description: Design, implement, and review risk-based tests for C++17/20/23 libraries and applications using unit, component, integration, property, concurrency, and benchmark tests. Use when planning coverage for a feature or refactor, creating test seams, choosing fakes versus mocks, reproducing a defect, testing failure paths and lifetimes, reducing flaky tests, or deciding which behaviors belong at each test level.
+description: Design and review risk-based tests for C++17/20/23 libraries and applications using unit, component, and integration tests, plus property, concurrency, and benchmark tests. Use when planning coverage, creating test seams, or testing failure paths and lifetimes.
 ---
 
 # Test C++ Software

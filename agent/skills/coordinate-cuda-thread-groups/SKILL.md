@@ -1,6 +1,8 @@
 ---
-description: "Implement and review CUDA warp-level primitives, Cooperative Groups, block or grid collectives, synchronization, ballots, shuffles, persistent kernels, and producer-consumer coordination. Use when CUDA threads exchange values or synchronize within a warp, subgroup, block, cluster, or grid, especially around divergence and collective participation."
+name: coordinate-cuda-thread-groups
+description: Implement and review CUDA warp-level primitives, Cooperative Groups, and block or grid collectives, including ballots and shuffles, persistent kernels, and producer-consumer coordination. Use when CUDA threads synchronize or exchange values within a warp, subgroup, block, or grid, especially around divergence and collective participation.
 ---
+
 # Coordinate CUDA Thread Groups
 
 Make the participant set explicit before using a collective or barrier. Treat synchronization as a correctness contract, not only a performance tool.

@@ -1,6 +1,6 @@
 ---
 name: build-meta-quest-unreal
-description: Build, debug, and optimize Meta Quest applications in Unreal Engine using current Meta XR, OpenXR, Blueprint, C++, rendering, interaction, passthrough, platform, and Android deployment guidance. Use when modifying an Unreal Quest project, configuring plugins or packaging, implementing XR gameplay or mixed reality features, diagnosing headset failures, or preparing an Unreal app for distribution.
+description: Build and optimize Meta Quest applications in Unreal Engine with Blueprint/C++ and current Meta XR, OpenXR, and Interaction SDK guidance for rendering/passthrough, tracking/audio, and platform deployment. Use when modifying an Unreal Quest project or Android build, implementing XR gameplay or mixed reality features, diagnosing headset failures, or preparing for distribution.
 ---
 
 # Build Meta Quest Unreal Apps

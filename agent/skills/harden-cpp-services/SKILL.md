@@ -1,6 +1,8 @@
 ---
-description: "Add resilience to networked, cloud, edge, robotics, and distributed C++ systems with deadlines, bounded retries, exponential backoff with jitter, circuit breakers, bulkheads, admission control, and graceful degradation. Use when remote calls time out, retry storms occur, queues or thread pools saturate, GPU or connection resources are exhausted, or one subsystem can cascade failure into others."
+name: harden-cpp-services
+description: Add resilience to networked/cloud/edge/robotics and distributed C++ systems with deadlines, bounded retries, exponential backoff, circuit breakers, and graceful degradation. Use when remote calls time out, retry storms occur, or queues and resources saturate.
 ---
+
 # Harden C++ Services
 
 Treat latency, overload, cancellation, and partial failure as part of the API contract.

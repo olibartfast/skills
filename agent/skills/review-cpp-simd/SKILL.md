@@ -1,6 +1,8 @@
 ---
-description: "Review C++ hot loops and kernels for auto-vectorization and portable SIMD readiness, including Google Highway suitability. Use when vectorization fails, SIMD throughput is unexpectedly low, scalar cleanup is needed, data layout blocks vector access, or code needs review for dependencies, aliasing, branches, gathers, alignment, reductions, and tail handling."
+name: review-cpp-simd
+description: Review C++ hot loops and kernels for auto-vectorization and portable SIMD readiness, including Google Highway suitability. Use when vectorization fails, SIMD throughput is unexpectedly low, scalar cleanup is needed, data layout blocks vector access, or code needs review for dependencies, aliasing, branches, gathers, alignment, reductions, and tail handling.
 ---
+
 # Review C++ SIMD
 
 Review the kernel for profitable, correct vectorization. Prefer portable, teachable structure

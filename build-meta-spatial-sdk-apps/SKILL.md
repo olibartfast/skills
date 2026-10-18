@@ -1,6 +1,6 @@
 ---
 name: build-meta-spatial-sdk-apps
-description: Build, extend, debug, and optimize Meta Spatial SDK applications and hybrid 2D/spatial Android apps for Meta Quest. Use when working with Kotlin, Jetpack Compose, Gradle, spatial entities and components, panels, scenes, input, lifecycle, permissions, platform services, or converting an existing Android app into an immersive Horizon OS experience.
+description: Build and optimize Meta Spatial SDK applications and hybrid 2D/spatial Android apps for Meta Quest. Use when working with Kotlin and Jetpack Compose, Gradle, spatial entities and components, panels and scenes, input and lifecycle, permissions and platform services, or converting an Android app into an immersive Horizon OS experience.
 ---
 
 # Build Meta Spatial SDK Apps

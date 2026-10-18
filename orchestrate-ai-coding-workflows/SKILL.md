@@ -1,6 +1,6 @@
 ---
 name: orchestrate-ai-coding-workflows
-description: "Design and execute model-replaceable AI coding workflows for coding agents and subagents across cloud, routed open-weight, and local inference (Ollama, LM Studio, or other local LLM runtimes), including OpenCode, Claude Code, and Codex agent definitions. Use when defining engineering contracts, planner/implementer roles, delegation packets, permission boundaries, acceptance validation, model routing, or measurements of coding-agent quality, context, cost, and intervention. Use design-ai-systems instead for production AI/ML system architecture."
+description: Design and execute model-replaceable AI coding workflows for agents and subagents across cloud, open-weight, and local inference such as Ollama/LM Studio, for OpenCode/Claude Code/Codex definitions. Use when defining engineering contracts, planner and implementer roles, delegation packets, permission boundaries, or coding-agent quality measurements. Use design-ai-systems instead for production AI/ML system architecture.
 ---
 
 # Orchestrate AI Coding Workflows

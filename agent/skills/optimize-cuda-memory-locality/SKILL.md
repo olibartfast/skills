@@ -1,6 +1,8 @@
 ---
-description: "Design, implement, and review CUDA tiled and stencil kernels that use shared memory, registers, caches, halos, and coalesced global access. Use for matrix tiles, convolutions, PDE solvers, image filters, neighborhood operations, transposes, or any CUDA kernel whose performance depends on data reuse and memory locality."
+name: optimize-cuda-memory-locality
+description: Design, implement, and review CUDA tiled and stencil kernels that use shared memory, registers, caches, halos, and coalesced global access. Use for matrix tiles, convolutions, PDE solvers, image filters, neighborhood operations, transposes, or any CUDA kernel whose performance depends on data reuse and memory locality.
 ---
+
 # Optimize CUDA Memory Locality
 
 Use tiling only when it creates measurable reuse or fixes a known access problem. Preserve correctness at tile edges and synchronization boundaries.

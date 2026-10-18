@@ -1,6 +1,8 @@
 ---
-description: "Implement and review CUDA reductions, inclusive or exclusive scans, maps/transforms, gathers, scatters, histograms, and related compaction or partition primitives. Use for CUDA C++ kernels or CCCL/CUB/Thrust code involving aggregate, prefix, element-wise, or indirect indexed operations, including correctness, numerical stability, contention, and performance work."
+name: implement-cuda-data-primitives
+description: Implement and review CUDA reductions, inclusive or exclusive scans, maps/transforms, gathers, scatters, histograms, and related compaction or partition primitives. Use for CUDA C++ kernels or CCCL/CUB/Thrust code involving aggregate, prefix, element-wise, or indirect indexed operations, including correctness, numerical stability, contention, and performance work.
 ---
+
 # Implement CUDA Data Primitives
 
 Implement aggregate and indexed operations with explicit semantics, safe participation, and library-first choices.
@@ -73,4 +75,4 @@ Compare against a trusted CPU or library implementation, then benchmark represen
 
 ## Sources
 
-Base the pattern vocabulary on [Parallel Programming Pattern Fundamentals in CUDA](https://olibartfast.ninja/blog/cuda-parallel-programming-patterns.html). Resolve APIs with current [CCCL/CUB documentation](https://nvidia.github.io/cccl/cub/) and semantics with the [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/).
+Base the pattern vocabulary on [Parallel Programming Pattern Fundamentals in CUDA](https://olibartfast.ninja/blog/cuda-parallel-programming-patterns.html). Resolve APIs with current [CCCL/CUB documentation](https://nvidia.github.io/cccl/) and semantics with the [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/).

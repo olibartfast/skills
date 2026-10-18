@@ -1,6 +1,8 @@
 ---
-description: "Structure C++ backend and enterprise services with explicit domain boundaries, command-query separation, repositories, transactional Units of Work, read models, and deployment helpers such as sidecars or backends-for-frontends. Use when persistence leaks into business logic, read and write workloads need different models, multiple changes require atomicity, or transport and infrastructure concerns obscure domain rules."
+name: model-cpp-domain-services
+description: Structure C++ backend and enterprise services with explicit domain boundaries, command-query separation, repositories, transactional Units of Work, read models, and deployment helpers such as sidecars or backends-for-frontends. Use when persistence leaks into business logic, read and write workloads need different models, multiple changes require atomicity, or transport and infrastructure concerns obscure domain rules.
 ---
+
 # Model C++ Domain Services
 
 Separate domain decisions from persistence, transport, and deployment mechanics.

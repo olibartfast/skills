@@ -1,6 +1,6 @@
 ---
 name: build-meta-quest-unity
-description: Build, debug, and optimize Meta Quest applications in Unity using current Meta XR, OpenXR, Interaction SDK, rendering, passthrough, tracking, audio, platform, and deployment guidance. Use when modifying a Unity Quest project, configuring packages or Android builds, implementing XR interactions or mixed reality features, diagnosing device-only failures, or preparing a Unity app for distribution.
+description: Build and optimize Meta Quest applications in Unity using current Meta XR, OpenXR, and Interaction SDK guidance for rendering/passthrough, tracking/audio, and platform deployment. Use when modifying a Unity Quest project or Android build, implementing XR interactions or mixed reality features, diagnosing device-only failures, or preparing for distribution.
 ---
 
 # Build Meta Quest Unity Apps

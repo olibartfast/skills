@@ -1,6 +1,6 @@
 ---
 name: modernize-cpp-design
-description: Design and modernize C++17/20/23 APIs using explicit ownership and lifetime contracts, value semantics, RAII, focused error models, variants, callables, concepts, templates, type erasure, or justified virtual interfaces. Use when creating or reviewing a public API, refactoring inheritance or owning raw pointers, choosing static versus runtime polymorphism, simplifying GoF machinery, or making invalid states and failure behavior explicit.
+description: Design and modernize C++17/20/23 APIs using explicit ownership and lifetime contracts, value semantics, RAII, and focused error models. Use when creating or reviewing a public API, refactoring inheritance or raw pointers, choosing static versus runtime polymorphism, or making invalid states explicit.
 ---
 
 # Modernize C++ Design
