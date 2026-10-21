@@ -16,6 +16,24 @@ ls /etc/udev/rules.d | grep -i realsense
 
 A UVC node being readable does not mean the RealSense USB device is writable. librealsense opens the USB device, not `/dev/video*`, so the udev rules matter independently of OpenCV access.
 
+## 1b. Verify the USB link before debugging software
+
+D400 cameras are USB 3 devices. Check the negotiated speed before changing code or permissions:
+
+```bash
+lsusb -t                       # 5000M/10000M is USB 3; 480M is USB 2
+```
+
+Inside the SDK, `device.get_info(RS2_CAMERA_INFO_USB_TYPE_DESCRIPTOR)` reports the same link type. A D435 on a USB 2 port can enumerate, expose valid stream profiles, and even deliver a first UVC frame, then fail with:
+
+```text
+Incomplete frame received: Incomplete video frame detected!
+Size 65536 out of 614655 bytes (10%)
+Frame didn't arrive within 6000
+```
+
+UVC frames larger than the USB 2 transfer window are truncated, so `wait_for_frames` never completes. Move the camera to a USB 3 port with a USB 3 cable. A single OpenCV frame working is not evidence that the link is healthy.
+
 Build dependencies on Debian/Ubuntu:
 
 ```bash

@@ -35,6 +35,7 @@ Read [references/realsense-capture-guide.md](references/realsense-capture-guide.
 - Pin the SDK tag and disable examples, tools, tests, and language bindings in source builds. A full default build pulls in unrelated targets and slows every configure.
 - Do not make the camera a hard dependency of a library that should link and test without it. Use a compile definition on the owning target and a separate translation unit.
 - On USB 2 links, expect lower resolution or frame rate. Verify the negotiated profile instead of assuming USB 3.
+- Verify the USB link before debugging capture code. D400 devices on USB 2 can enumerate and expose valid profiles yet fail to stream with truncated UVC frames. Require a USB 3 port and cable; a single working OpenCV frame does not prove the link is healthy.
 
 ## Deliverable
 
