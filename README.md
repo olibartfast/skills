@@ -49,6 +49,7 @@ Use the bundled scripts to install one complete topic for agents detected by the
 ./scripts/install-cpp-architecture-skills.sh
 ./scripts/install-cuda-parallel-programming-skills.sh
 ./scripts/install-ai-coding-workflow-skills.sh
+./scripts/install-sensing-skills.sh
 ```
 
 The scripts install non-interactively into the current project without hardcoding an agent.
@@ -111,6 +112,12 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`test-cpp-software`](test-cpp-software/) | Design risk-based unit, integration, property, concurrency, and benchmark tests |
 | [`harden-cpp-software`](harden-cpp-software/) | Apply proportional warnings, analysis, sanitizer, fuzzing, and CI quality gates |
 
+### Sensing and Capture
+
+| Skill | Purpose |
+| --- | --- |
+| [`integrate-realsense-capture`](integrate-realsense-capture/) | Capture calibrated color and aligned depth from Intel RealSense cameras in C++ |
+
 ### CUDA Parallel Programming
 
 | Skill | Purpose |
@@ -169,6 +176,11 @@ The Gitflow workflow skill is based on
 [Atlassian's Gitflow Workflow tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow),
 adapted into operational guidance with explicit safety and verification gates. It retains
 the tutorial's warning that Gitflow is a legacy workflow rather than a default for modern CI/CD.
+
+The RealSense capture skill is derived from integrating an Intel RealSense D435 into a C++
+inference project, and reconciled with Intel's librealsense API and calibration documentation.
+It keeps device access, stream profiles, alignment, and udev permissions out of the inference
+core.
 
 The Meta Horizon collection is based on Meta's
 [LLM resources for AI](https://developers.meta.com/horizon/essentials/ai-solutions/) and routes

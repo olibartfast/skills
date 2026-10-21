@@ -1,0 +1,4 @@
+interface:
+  display_name: "Integrate RealSense Capture"
+  short_description: "Capture calibrated color and aligned depth in C++"
+  default_prompt: "Use $integrate-realsense-capture to add or review this RealSense capture path."
