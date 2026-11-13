@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clean Up Merged Git Branches"
+  short_description: "Remove branches merged into develop locally and remotely"
+  default_prompt: "Use $cleanup-merged-git-branches to verify my branch is merged into develop, then delete it locally and on its remote."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clean Up Brev Job Instances"
+  short_description: "Delete completed job instances to avoid ongoing costs"
+  default_prompt: "Use $cleanup-brev-job-instances to save my completed job's results, delete its NVIDIA Brev instance, and verify removal."

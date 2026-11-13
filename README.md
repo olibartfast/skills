@@ -90,11 +90,18 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
 | [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 
+### Cloud Compute
+
+| Skill | Purpose |
+| --- | --- |
+| [`cleanup-brev-job-instances`](cleanup-brev-job-instances/) | Preserve completed job results, then delete and verify removal of the NVIDIA Brev instance |
+
 ### Git Workflows
 
 | Skill | Purpose |
 | --- | --- |
 | [`manage-gitflow-workflow`](manage-gitflow-workflow/) | Manage Gitflow features, releases, and hotfixes with safe integration, tagging, and back-merges |
+| [`cleanup-merged-git-branches`](cleanup-merged-git-branches/) | Verify branches are merged into develop, then delete them locally and remotely |
 
 ### C++ Architecture and Design
 
