@@ -90,6 +90,12 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
 | [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 
+### OpenCode Free Models
+
+| Skill | Purpose |
+| --- | --- |
+| [`select-opencode-free-models`](select-opencode-free-models/) | Verify free-model privacy, region, availability, limits, and deprecations before assigning agent roles |
+
 ### Cloud Compute
 
 | Skill | Purpose |
@@ -180,6 +186,12 @@ the tutorial's warning that Gitflow is a legacy workflow rather than a default f
 The Meta Horizon collection is based on Meta's
 [LLM resources for AI](https://developers.meta.com/horizon/essentials/ai-solutions/) and routes
 agents to the current LLM-optimized documentation and API indexes for each supported build path.
+
+The OpenCode free-model skill is based on
+[OpenCode Console models](https://opencode.ai/docs/console/models/) and live
+reachability probes. Free-model terms, regional availability, and the catalog
+change frequently, so the skill records a dated snapshot and requires
+re-verification rather than pinning a permanent recommendation.
 
 Additional structural references:
 
