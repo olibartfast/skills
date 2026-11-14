@@ -87,6 +87,7 @@ Pass additional supported `skills add` options after the script name; for exampl
 | Skill | Purpose |
 | --- | --- |
 | [`orchestrate-ai-coding-workflows`](orchestrate-ai-coding-workflows/) | Delegate approved coding phases across models with explicit permissions, handoffs, and measurement |
+| [`choose-agent-workflow`](choose-agent-workflow/) | Recommend a coordination setup and its trade-offs without executing the workflow |
 | [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
 | [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 

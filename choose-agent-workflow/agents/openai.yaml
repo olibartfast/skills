@@ -1,0 +1,4 @@
+interface:
+  display_name: "Choose Agent Workflow"
+  short_description: "Recommend task coordination without executing it"
+  default_prompt: "Use $choose-agent-workflow to recommend a coordination setup for my task, explain its trade-offs, and describe how results should be checked."
