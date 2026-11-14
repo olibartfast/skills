@@ -91,6 +91,9 @@ Pass additional supported `skills add` options after the script name; for exampl
 | [`apply-spec-driven-development`](apply-spec-driven-development/) | Develop features from living project and feature specs with thin phases and validation defined before implementation |
 | [`design-ai-systems`](design-ai-systems/) | Design, review, and evolve production AI systems around measurable business outcomes |
 
+For an explanation of multi-tier pyramids and their alternatives, read the
+[agent coordination workflow guide](choose-agent-workflow/README.md).
+
 ### OpenCode Free Models
 
 | Skill | Purpose |
