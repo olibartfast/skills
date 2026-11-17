@@ -13,6 +13,18 @@ opencode
 
 Documentation: <https://opencode.ai/docs/console/models/>.
 
+## Check LMSYS Chatbot Arena (open-source filter)
+
+```sh
+# Open the Arena leaderboard filtered to open-source models
+# Use this to cross-reference quality rankings for models in your catalog
+open https://arena.ai/leaderboard/agent?license=open-source
+```
+
+Record the Arena rank and date for each candidate model alongside the probe
+results. This provides an independent quality signal when multiple models share
+the same privacy class and reachability.
+
 ## Probe one model
 
 ```sh
@@ -55,6 +67,7 @@ configuration.
 | Role | architect |
 | Privacy class | zero-retention |
 | Region result | reachable |
+| Arena rank (open-source) | top-5 (2026-11-14) |
 | Fallback | `opencode/glm-5.3-flash-free#high` |
 
 Keep the record beside the agent configuration so a later failure has context.
@@ -75,4 +88,5 @@ Confirm the ID, `model.providerID`, `model.id`, and `mode` for each role.
 - any model or provider error;
 - a documentation change or deprecation notice;
 - a free model being withdrawn;
-- a change to the configured variant.
+- a change to the configured variant;
+- significant shift in LMSYS Arena open-source rankings for the model family.

@@ -50,6 +50,10 @@ Capture these before selecting a model:
   can actually select.
 - Reference a model as `opencode/<model-id>` with an optional variant, such as
   `opencode/deepseek-v4.1-flash-free#max`.
+- Quality ranking: cross-reference candidates with the [LMSYS Chatbot Arena
+  leaderboard (open-source filter)](https://arena.ai/leaderboard/agent?license=open-source)
+  for independent Elo ratings. Use as a tie-breaker when multiple models share
+  the same privacy class and reachability.
 
 When documentation and runtime disagree, use the docs for contractual terms and
 the runtime for entitlement. Both can be stale; probe before trusting either.
@@ -99,6 +103,15 @@ free endpoints often differ from the paid model of the same family.
 | Implementer | strong coding model, high variant | correctness and iteration speed |
 | Reviewer | different family from the implementer, high variant | independent failure modes |
 | Explorer | fast, low variant | high volume, low stakes |
+
+When multiple models are available in the same privacy class and reachability
+tier, use the [LMSYS Chatbot Arena](https://arena.ai/leaderboard/agent?license=open-source)
+(open-source license filter) to rank candidates by Elo for the role's primary
+capability:
+- Architect/Planner: overall reasoning and instruction-following Elo
+- Implementer: coding-specific Elo (if available) or overall
+- Reviewer: different family from implementer with highest Elo
+- Orchestrator/Explorer: throughput-oriented, mid-tier Elo acceptable
 
 Build a fallback chain inside the same privacy class, for example DeepSeek to
 GLM to MiniMax. Do not fall back from a zero-retention model to a trial-logged
