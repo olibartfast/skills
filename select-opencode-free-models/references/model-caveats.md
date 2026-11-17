@@ -94,32 +94,36 @@ not legal advice.
 ## Rate limits by provider
 
 ### OpenCode Console
-- **Daily request limit:** not published as a single number (FAQ stated 200/day in Oct 2026; as of Nov 2026 no number given).
-- **Per-model exception:** LongCat 2.5 Free explicitly limited to 100 requests/day.
-- **Scope:** limit is per account/network/IP, not per model. All free models share the same bucket.
+- **No published general RPM/RPD**; only explicit limit: **LongCat 2.5 Free = 100 req/day**.
+- All other free models (`deepseek-v4.1-flash-free`, `glm-5.3-flash-free`, `hy4-flash-free`, `beam-free`, `flint-40b-free`, `mimo-*`, `big-pickle`, `iceman-free`, `nemotron-*`, `jev-1.13-free`) are "free for a limited time" **without declared caps**.
+- **Scope:** per account/network/IP (shared bucket across all free models).
 - **Reset:** 00:00 UTC daily.
 - **Nature:** dynamic — "always shifting based off what capacity we have vs demand" (OpenCode team). Measured limits have varied from ~170 to ~900 requests/day.
 - **Error:** `Free usage limit reached` / `RateLimit.FreeUsageLimitError` with reset time shown.
+- **Pyramid guidance:** **treat 429/quota as throttled** — move role or reduce parallelism; do not retry in burst.
 
 ### OpenRouter
 - **Free models (IDs ending in `:free`) and `openrouter/free` router:**
-  - 20 requests/minute (always)
-  - 50 requests/day if all-time credits purchased < 10
-  - 1,000 requests/day if all-time credits purchased ≥ 10 (one-time threshold; starts at 9 credits to absorb fees)
+  - **20 RPM** (always)
+  - **50 RPD** if all-time credits purchased < 10
+  - **1,000 RPD** if all-time credits purchased ≥ 10 (one-time threshold; starts at 9 credits to absorb fees)
 - **Tier basis:** all-time credits purchased, not current balance. Buying once lifts the cap permanently.
+- **Shared budget:** all `:free` models + router share the same daily bucket (UTC day).
 - **Negative balance:** blocks free models with HTTP 402.
 - **Upstream provider limits:** also apply independently; many 429s come from providers, not OpenRouter.
 - **Failed requests:** do not count toward daily cap (per community testing).
 - **Check quota:** `GET /api/v1/key` → `free_model_daily_requests` (used, limit, remaining).
+- **Pyramid guidance:** **do not use `:free` for fan-out/architect with many subagents**; OK for single explorer/low-volume. `north-mini-code:free` → explorer only, not default implementer.
 
-### NVIDIA (NIM / build.nvidia.com)
-- **Published ceiling:** ~40 requests/minute (global across all models, not per-model).
-- **Daily:** up to 10,000 requests/day per account (vendor's published ceiling).
-- **Account:** requires NVIDIA Developer Program (free) + phone verification in supported country.
+### NVIDIA (NIM / build.nvidia.com; also `opencode/nemotron-*-free` trial endpoints)
+- **~40 RPM global** (shared across all models at account/key level, **not per-model**).
+- **No official daily published**; vendor ceiling up to 10,000 RPD.
+- **Account:** NVIDIA Developer Program (free) + phone verification in supported country.
 - **Geo-restrictions:** not offered in Russia, Pakistan, Bangladesh, Iran, Kazakhstan, Belarus, Uzbekistan, Kyrgyzstan, and others (~5.5% of developers).
-- **Use case:** prototyping, research, development, testing only. Production requires NVIDIA AI Enterprise license.
+- **Trial terms only:** prototyping/research/dev/test; **no production, no confidential data**, inputs logged for security/improvement.
 - **Model registration:** some models require additional per-model-family registration (403 if not registered).
-- **Credit system:** legacy credit system removed; "rate will vary per model queried" (NVIDIA staff). 40 RPM is from user reports, not official docs.
+- **Credit system:** legacy credits removed; "rate will vary per model queried" (NVIDIA staff). 40 RPM is community baseline, not SLA.
+- **Pyramid guidance:** **treat as empirical baseline, not SLA**. Use as fallback/reviewer/secondary vision-worker, not for high parallelism. On 429 with `Retry-After`, backoff and move to `opencode/*` zero-retention.
 
 ## Deprecation checks
 

@@ -45,12 +45,21 @@ curl -s https://openrouter.ai/api/v1/key \
 # Limit is 50 (< 10 credits lifetime) or 1000 (≥ 10 credits)
 
 # NVIDIA: check account page at build.nvidia.com for usage
-# No public API for rate limit status; 40 RPM global, ~10k RPD ceiling
+# No public API for rate limit status; ~40 RPM global (shared across models), no official daily
 ```
 
 Monitor rate limit headers on 429 responses:
-- OpenRouter: `X-RateLimit-Limit`, `X-RateLimit-Reset`, `error.metadata.limit_source`
-- NVIDIA: check response headers; provider 429s include `error.metadata.provider_code`
+- **OpenRouter**: `X-RateLimit-Limit`, `X-RateLimit-Reset`, `error.metadata.limit_source` (`openrouter_free_tier_per_minute` | `openrouter_free_tier_daily` | `upstream_provider_shared_pool`)
+- **NVIDIA**: check `Retry-After` header; provider 429s include `error.metadata.provider_code`
+- **OpenCode**: error message includes reset time; no standard headers
+
+## 429 handling by provider
+
+| Provider | 429 source | Action |
+| --- | --- | --- |
+| **OpenCode** | Gateway dynamic bucket | Move role or reduce parallelism; **do not retry in burst**. Wait for reset time in error. |
+| **OpenRouter** | Own tier (`openrouter_free_tier_*`) | Honor `X-RateLimit-Reset`; backoff exponentially. If `upstream_provider_shared_pool` → provider saturated, add paid fallback or switch model. |
+| **NVIDIA** | ~40 RPM global or provider | Honor `Retry-After`; backoff. **Move to `opencode/*` zero-retention fallback** — NVIDIA is trial-only, not for sustained parallelism. |
 
 ## Probe one model
 
@@ -106,8 +115,10 @@ configuration.
 | Region result | reachable |
 | Arena rank (open-source) | top-5 (2026-11-14) |
 | Rate limit (RPM) | 20 (OpenRouter) / ~40 (NVIDIA) / dynamic (OpenCode) |
-| Rate limit (RPD) | 50/1000 (OpenRouter) / ~10k (NVIDIA) / dynamic (OpenCode) |
+| Rate limit (RPD) | 50/1000 (OpenRouter) / none official (NVIDIA) / dynamic (OpenCode) |
 | Quota check method | OpenRouter: `GET /api/v1/key` / OpenCode: error message / NVIDIA: account page |
+| 429 strategy | OpenCode: wait for reset / OpenRouter: backoff + paid fallback / NVIDIA: backoff → `opencode/*` zero-retention |
+| Pyramid suitability | OpenCode: architect/implementer / OpenRouter: explorer only / NVIDIA: fallback/reviewer/vision-worker only |
 | Fallback | `opencode/glm-5.3-flash-free#high` |
 
 Keep the record beside the agent configuration so a later failure has context.
