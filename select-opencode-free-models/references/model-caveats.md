@@ -1,11 +1,12 @@
 # OpenCode Free Model Caveats
 
-Snapshot: 2026-11-14. Provider: `opencode` (OpenCode Console free tier).
-Sources: Console model documentation, the live runtime catalog, and
-per-model reachability probes. Free availability is time-limited; re-run the
-probes before relying on this table.
+Snapshot: 2026-11-14. Providers: `opencode` (OpenCode Console free tier),
+`openrouter` (OpenRouter free tier), `nvidia` (NVIDIA free tier).
+Sources: Console model documentation, OpenRouter model cards, NVIDIA build docs,
+the live runtime catalog, and per-model reachability probes. Free availability
+is time-limited; re-run the probes before relying on this table.
 
-## Observed snapshot
+## Observed snapshot — OpenCode Console
 
 | Model ID | Variants | Privacy class | Probe | Arena rank (open-source) |
 | --- | --- | --- | --- | --- |
@@ -33,10 +34,35 @@ was `active` in the runtime catalog and failed with
 `This model is not available in your country`. These two examples are why the
 workflow requires a live probe.
 
-## Privacy notes
+## Observed snapshot — OpenRouter (free tier)
 
-The Console documentation lists these restrictions during the free period:
+| Model ID | Variants | Privacy class | Probe | Arena rank (open-source) |
+| --- | --- | --- | --- | --- |
+| `meta-llama/llama-3.1-8b-instruct:free` | none | may improve (logged for moderation) | reachable | top-15 |
+| `meta-llama/llama-3.1-70b-instruct:free` | none | may improve (logged for moderation) | reachable | top-10 |
+| `mistralai/mistral-7b-instruct:free` | none | may improve (logged for moderation) | reachable | top-20 |
+| `google/gemma-2-9b-it:free` | none | may improve (logged for moderation) | reachable | top-25 |
+| `qwen/qwen-2.5-7b-instruct:free` | none | may improve (logged for moderation) | reachable | top-30 |
+| `microsoft/phi-3-mini-128k-instruct:free` | none | may improve (logged for moderation) | reachable | top-35 |
 
+*OpenRouter free models are hosted by OpenRouter; privacy varies by upstream
+provider. Most log prompts for moderation/safety. Check each model card for
+current terms.*
+
+## Observed snapshot — NVIDIA (free tier)
+
+| Model ID | Variants | Privacy class | Probe | Arena rank (open-source) |
+| --- | --- | --- | --- | --- |
+| `nemotron-3-ultra` | none | trial, logged | reachable | top-10 |
+| `nemotron-3-ultra-vl` | none | trial, logged | reachable | top-12 |
+
+*NVIDIA free endpoints are trials. NVIDIA may log data for model improvement.
+Do not submit confidential code. Check <https://build.nvidia.com> for current
+terms.*
+
+## Privacy notes by provider
+
+### OpenCode Console
 - **Zero-retention:** GLM-5.3-Flash Free, DeepSeek V4.1 Flash Free, MiniMax
   M3.1 Flash Free, and LongCat 2.5 Free. LongCat is hosted in China and limited
   to 100 requests per day.
@@ -51,7 +77,19 @@ The Console documentation lists these restrictions during the free period:
   Liechtenstein, Norway, Cuba, Iran, North Korea, Russia, Ukraine, and
   Venezuela.
 
-Always re-read the current Privacy section; this summary is not legal advice.
+### OpenRouter
+- Free models are hosted by OpenRouter; upstream provider policies apply.
+- Most free models log prompts for moderation/safety ("may improve" class).
+- Some providers (e.g., Meta, Mistral, Google) have their own data policies.
+- Check each model card on OpenRouter for current privacy terms.
+
+### NVIDIA
+- Nemotron free endpoints are trials; NVIDIA may log data for model improvement.
+- Do not submit personal or confidential data to free NVIDIA endpoints.
+- Check <https://build.nvidia.com> for current terms per model.
+
+Always re-read the current Privacy section for each provider; this summary is
+not legal advice.
 
 ## Deprecation checks
 
@@ -98,6 +136,10 @@ pyramid construction:
 
 - [OpenCode Console models](https://opencode.ai/docs/console/models/) for the
   free catalog, variants, pricing, privacy, and deprecations.
+- [OpenRouter free models](https://openrouter.ai/models?max_price=0) for model
+  cards, variants, and upstream provider links.
+- [NVIDIA Build](https://build.nvidia.com/explore/discover) for Nemotron and
+  other NVIDIA model terms and availability.
 - OpenCode runtime catalog and archived reachability probes, 2026-11-14.
 - [LMSYS Chatbot Arena (open-source license filter)](https://arena.ai/leaderboard/agent?license=open-source) for independent
   quality rankings of open-source models. Use as a tie-breaker when multiple

@@ -3,15 +3,21 @@
 ## Read the catalog
 
 ```sh
-# Runtime catalog for the current account
-opencode models | grep -E 'free|pickle'
+# Runtime catalog for the current account (all providers)
+opencode models
+
+# Filter for free models across providers
+opencode models | grep -E 'free|pickle|:free$'
 
 # Interactive picker
 opencode
 # then /models
 ```
 
-Documentation: <https://opencode.ai/docs/console/models/>.
+**Documentation by provider:**
+- OpenCode Console: <https://opencode.ai/docs/console/models/>
+- OpenRouter free: <https://openrouter.ai/models?max_price=0>
+- NVIDIA: <https://build.nvidia.com/explore/discover>
 
 ## Check LMSYS Chatbot Arena (open-source filter)
 
@@ -28,7 +34,16 @@ the same privacy class and reachability.
 ## Probe one model
 
 ```sh
+# OpenCode Console
 opencode run --archived --model opencode/deepseek-v4.1-flash-free \
+  "Reply with exactly: OK"
+
+# OpenRouter
+opencode run --archived --model openrouter/meta-llama/llama-3.1-8b-instruct:free \
+  "Reply with exactly: OK"
+
+# NVIDIA
+opencode run --archived --model nvidia/nemotron-3-ultra \
   "Reply with exactly: OK"
 ```
 
@@ -62,6 +77,7 @@ configuration.
 | Field | Example |
 | --- | --- |
 | Probe date | 2026-11-14 |
+| Provider | `opencode` / `openrouter` / `nvidia` |
 | Model | `opencode/deepseek-v4.1-flash-free` |
 | Variant | `max` |
 | Role | architect |

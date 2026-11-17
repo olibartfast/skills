@@ -12,10 +12,15 @@ re-verified before long or sensitive runs.
 
 ## Boundary
 
-This skill covers free models served through OpenCode Console and referenced as
-`opencode/<model-id>`. Paid Console models and third-party providers are out of
-scope. The catalog changes without notice; every table here is a dated snapshot,
-not a contract.
+This skill covers free models accessible through OpenCode, including:
+
+- **OpenCode Console free tier**: models referenced as `opencode/<model-id>`
+- **OpenRouter free models**: models referenced as `openrouter/<model-id>` (e.g., `openrouter/meta-llama/llama-3.1-8b-instruct:free`)
+- **NVIDIA free models**: models referenced as `nvidia/<model-id>` (e.g., `nvidia/nemotron-3-ultra`)
+- **Other providers**: any provider configured in OpenCode that offers free models
+
+Paid Console models are out of scope. The catalog changes without notice; every
+table here is a dated snapshot, not a contract.
 
 ## Workflow
 
@@ -44,12 +49,16 @@ Capture these before selecting a model:
 
 ### 2. Read the current catalog
 
-- Documentation: <https://opencode.ai/docs/console/models/> lists the free model
-  set, variants, prices, privacy notes, and deprecations.
-- Runtime: `opencode models`, or `/models` in the TUI, lists what this account
-  can actually select.
-- Reference a model as `opencode/<model-id>` with an optional variant, such as
-  `opencode/deepseek-v4.1-flash-free#max`.
+- **OpenCode Console**: <https://opencode.ai/docs/console/models/> lists the free
+  model set, variants, prices, privacy notes, and deprecations.
+- **OpenRouter**: <https://openrouter.ai/models?max_price=0> filters free models;
+  check each model's "Context" and "Architecture" tabs for privacy/retention.
+- **NVIDIA**: <https://build.nvidia.com/explore/discover> lists Nemotron and other
+  models; free tiers are marked. Review NVIDIA's data usage policy per model.
+- **Runtime**: `opencode models`, or `/models` in the TUI, lists what this account
+  can actually select across all configured providers.
+- Reference a model as `<provider>/<model-id>` with an optional variant, such as
+  `opencode/deepseek-v4.1-flash-free#max` or `openrouter/meta-llama/llama-3.1-8b-instruct:free`.
 - Quality ranking: cross-reference candidates with the [LMSYS Chatbot Arena
   leaderboard (open-source filter)](https://arena.ai/leaderboard/agent?license=open-source)
   for independent Elo ratings. Use as a tie-breaker when multiple models share
@@ -63,11 +72,19 @@ the runtime for entitlement. Both can be stale; probe before trusting either.
 Catalog status is not reachability. Probe the exact model and variant:
 
 ```sh
-opencode run --archived --model opencode/<model-id> "Reply with exactly: OK"
+# OpenCode Console
+opencode run --archived --model opencode/deepseek-v4.1-flash-free "Reply with exactly: OK"
+
+# OpenRouter
+opencode run --archived --model openrouter/meta-llama/llama-3.1-8b-instruct:free "Reply with exactly: OK"
+
+# NVIDIA
+opencode run --archived --model nvidia/nemotron-3-ultra "Reply with exactly: OK"
 ```
 
 `--archived` keeps probe sessions out of normal history. To probe a set, run
-[`scripts/probe-free-models.sh`](scripts/probe-free-models.sh).
+[`scripts/probe-free-models.sh`](scripts/probe-free-models.sh) (update the script
+for your provider list).
 
 | Result | Meaning | Action |
 | --- | --- | --- |
@@ -81,7 +98,7 @@ A model can be `active` in the catalog and still fail. Record the probe date.
 
 ### 4. Classify privacy and retention
 
-Read the current **Privacy** section of the Console model documentation before
+Read the current privacy/retention policy for **each provider and model** before
 using a free model on non-public code. Sort candidates into four classes:
 
 | Class | Meaning | Typical use |
@@ -90,6 +107,15 @@ using a free model on non-public code. Sort candidates into four classes:
 | Retained, no training | short safety retention only | internal but not secret |
 | May improve the model | inputs may be used for improvement | public or disposable code |
 | Trial or training | logged trial data or training use | public or synthetic code only |
+
+**Provider-specific notes:**
+- **OpenCode Console**: Privacy class documented per model in Console docs.
+- **OpenRouter**: Varies by upstream provider. Check the model card on OpenRouter
+  and the original provider's policy. Many free models log prompts for moderation.
+- **NVIDIA**: Nemotron free endpoints are trials; NVIDIA may log data. Do not
+  submit confidential code.
+- **Other providers**: Check each provider's terms; free tiers often have weaker
+  privacy than paid.
 
 Never infer a privacy class from the model name. Providers change terms, and
 free endpoints often differ from the paid model of the same family.
@@ -113,9 +139,17 @@ capability:
 - Reviewer: different family from implementer with highest Elo
 - Orchestrator/Explorer: throughput-oriented, mid-tier Elo acceptable
 
-Build a fallback chain inside the same privacy class, for example DeepSeek to
-GLM to MiniMax. Do not fall back from a zero-retention model to a trial-logged
-one just to keep working.
+**Cross-provider fallback chains (privacy-class aligned):**
+
+| Privacy class | Example chain |
+| --- | --- |
+| Zero-retention | `opencode/deepseek-v4.1-flash-free` → `opencode/glm-5.3-flash-free` → `opencode/minimax-m3.1-flash-free` |
+| May improve | `openrouter/meta-llama/llama-3.1-8b-instruct:free` → `openrouter/mistralai/mistral-7b-instruct:free` |
+| Trial/logged | `nvidia/nemotron-3-ultra` → `opencode/nemotron-3.5-super-vl-free` |
+
+Do not fall back from a zero-retention model to a trial-logged one just to keep
+working. Prefer same-provider fallbacks for simpler config; cross-provider for
+independence.
 
 Variant support differs by model. Use only a variant the model advertises in
 the model picker or provider metadata. A wrong variant fails at request time,
