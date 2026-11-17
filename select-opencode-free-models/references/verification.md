@@ -31,6 +31,27 @@ Record the Arena rank and date for each candidate model alongside the probe
 results. This provides an independent quality signal when multiple models share
 the same privacy class and reachability.
 
+## Check rate limit status
+
+```sh
+# OpenCode Console: no direct API; watch for "Free usage limit reached" error
+# Reset is at 00:00 UTC. Error message includes reset time.
+
+# OpenRouter: check free model daily counter
+curl -s https://openrouter.ai/api/v1/key \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  | jq '.data.free_model_daily_requests'
+# Returns: {"used": 20, "limit": 50, "remaining": 30}
+# Limit is 50 (< 10 credits lifetime) or 1000 (≥ 10 credits)
+
+# NVIDIA: check account page at build.nvidia.com for usage
+# No public API for rate limit status; 40 RPM global, ~10k RPD ceiling
+```
+
+Monitor rate limit headers on 429 responses:
+- OpenRouter: `X-RateLimit-Limit`, `X-RateLimit-Reset`, `error.metadata.limit_source`
+- NVIDIA: check response headers; provider 429s include `error.metadata.provider_code`
+
 ## Probe one model
 
 ```sh
@@ -84,6 +105,9 @@ configuration.
 | Privacy class | zero-retention |
 | Region result | reachable |
 | Arena rank (open-source) | top-5 (2026-11-14) |
+| Rate limit (RPM) | 20 (OpenRouter) / ~40 (NVIDIA) / dynamic (OpenCode) |
+| Rate limit (RPD) | 50/1000 (OpenRouter) / ~10k (NVIDIA) / dynamic (OpenCode) |
+| Quota check method | OpenRouter: `GET /api/v1/key` / OpenCode: error message / NVIDIA: account page |
 | Fallback | `opencode/glm-5.3-flash-free#high` |
 
 Keep the record beside the agent configuration so a later failure has context.

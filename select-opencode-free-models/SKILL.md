@@ -165,13 +165,21 @@ the project or agent config. Re-probe:
 - when the Console documentation changes;
 - when a free model is withdrawn or deprecated.
 
+## Rate limits by provider
+
+| Provider | Free tier limits | Notes |
+| --- | --- | --- |
+| **OpenCode Console** | Daily request limit (undocumented); LongCat 2.5 Free: 100/day | FAQ used to state 200/day (Oct 2026); as of Nov 2026 no single number published. Limit is per account/network/IP, not per model. Resets at 00:00 UTC. Dynamic based on capacity vs demand. |
+| **OpenRouter** | 20 RPM; 50 RPD (< 10 credits lifetime) or 1,000 RPD (≥ 10 credits) | Applies to all `:free` models and `openrouter/free` router. Tier based on all-time credits purchased (one-time threshold). Negative balance → 402 errors. Upstream provider limits also apply. |
+| **NVIDIA (NIM)** | ~40 RPM (global across all models); up to 10,000 RPD | Requires NVIDIA Developer Program account + phone verification. Not available in Russia, Pakistan, Bangladesh, Iran, Kazakhstan, Belarus, Uzbekistan, Kyrgyzstan, and others. Prototyping only; production needs NVIDIA AI Enterprise license. Some models require additional per-model-family registration. |
+
 ## Failure handling
 
 - **Model unavailable:** remove it from the config and use the same-class
   fallback. Do not silently downgrade privacy.
 - **Geo-blocked:** replace it. Retrying cannot change the region.
 - **Rate limited:** move the role to another family, reduce parallelism, or
-  lower the number of delegated agents.
+  lower the number of delegated agents. Check provider-specific limits above.
 - **Deprecated:** migrate before the removal date; check the deprecation table
   for both the family and the exact version.
 - **Unexpected quality drop:** re-check the selected variant and whether the
