@@ -111,6 +111,7 @@ For an explanation of multi-tier pyramids and their alternatives, read the
 | Skill | Purpose |
 | --- | --- |
 | [`manage-gitflow-workflow`](manage-gitflow-workflow/) | Manage Gitflow features, releases, and hotfixes with safe integration, tagging, and back-merges |
+| [`generate-changelog`](generate-changelog/) | Draft Keep a Changelog release notes from git history with semver guidance |
 | [`cleanup-merged-git-branches`](cleanup-merged-git-branches/) | Verify branches are merged into develop, then delete them locally and remotely |
 
 ### C++ Architecture and Design
